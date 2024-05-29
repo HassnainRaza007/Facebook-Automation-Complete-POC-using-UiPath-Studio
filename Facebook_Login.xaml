@@ -1,0 +1,400 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="1240,515" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Net</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>Facebook Automation Complete POC.Core</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Net.HttpListener</AssemblyReference>
+      <AssemblyReference>System.Net.WebProxy</AssemblyReference>
+      <AssemblyReference>System.Net.NameResolution</AssemblyReference>
+      <AssemblyReference>System.Net.WebClient</AssemblyReference>
+      <AssemblyReference>System.Net.Requests</AssemblyReference>
+      <AssemblyReference>System.Net.ServicePoint</AssemblyReference>
+      <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Sequence | Facebook Login " sap:VirtualizedContainerService.HintSize="450,446" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="Login_Info" />
+      <Variable x:TypeArguments="x:String" Name="Email" />
+      <Variable x:TypeArguments="x:String" Name="Password" />
+      <Variable x:TypeArguments="ss:SecureString" Name="SecureString_Password" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:ReadRange Range="{x:Null}" AddHeaders="True" sap2010:Annotation.AnnotationText="Red data of the login_Info sheet." DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="388,94" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Login_Info" WorkbookPath="Config_Folder\Config_File.xlsx">
+      <ui:ReadRange.DataTable>
+        <OutArgument x:TypeArguments="sd:DataTable">
+          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">Login_Info</CSharpReference>
+        </OutArgument>
+      </ui:ReadRange.DataTable>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ReadRange>
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Set the max itrration to one and read only first row from the excel sheet." DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="388,109" sap2010:WorkflowViewState.IdRef="ForEachRow_1" MaxIterations="1">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="521,519" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:MultipleAssign sap2010:Annotation.AnnotationText="Assigne the values from the excel sheet the email and the password to the string variables" DisplayName="Multiple Assign | Assigne the login Credientials" sap:VirtualizedContainerService.HintSize="479,250" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+              <ui:MultipleAssign.AssignOperations>
+                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">Email</CSharpReference>
+                      </OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">CurrentRow["Email"].ToString()</CSharpValue>
+                      </InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_8">Password</CSharpReference>
+                      </OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">CurrentRow["Password"].ToString()</CSharpValue>
+                      </InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="ss:SecureString">
+                        <CSharpReference x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">SecureString_Password</CSharpReference>
+                      </OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="ss:SecureString">
+                        <CSharpValue x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">new System.Net.NetworkCredential("", Password).SecurePassword</CSharpValue>
+                      </InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                </scg:List>
+              </ui:MultipleAssign.AssignOperations>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:MultipleAssign>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479,141" sap2010:WorkflowViewState.IdRef="LogMessage_2">
+              <ui:LogMessage.Level>
+                <InArgument x:TypeArguments="ui:LogLevel">
+                  <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Level>
+              <ui:LogMessage.Message>
+                <InArgument x:TypeArguments="x:Object">
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">"Email is equal to " + Email +" and password is " + Password</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Message>
+            </ui:LogMessage>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+      <ui:ForEachRow.DataTable>
+        <InArgument x:TypeArguments="sd:DataTable">
+          <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">Login_Info</CSharpValue>
+        </InArgument>
+      </ui:ForEachRow.DataTable>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ForEachRow>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Open Facebook" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" ScopeGuid="59cc1289-61bf-4511-b151-61127084149c" Version="V2" WindowResize="Maximize">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1016,512" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NCheckState sap2010:Annotation.AnnotationText="main purpose of this activity is that.&#xD;&#xA;if the element found the we move the control to the Target appear and log out from the account otherwise the control automatically move to the target is not appear on the screen and the we procced with the login steps of the facebook account." DisplayName="Check App State | Memories" sap:VirtualizedContainerService.HintSize="954,397" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="59cc1289-61bf-4511-b151-61127084149c" Version="V3">
+              <uix:NCheckState.IfExists>
+                <Sequence sap2010:Annotation.AnnotationText="if the Check App state activity finss the Memories element on the screen then we logout it from the current logged in Facebook account." DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,123" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="In this activity we I click on the profile icon to open the menu." ClickType="Single" DisplayName="Click on profile Button" sap:VirtualizedContainerService.HintSize="388,94" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="59cc1289-61bf-4511-b151-61127084149c" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.facebook.com/" CvElementArea="1298, 97, 47, 47" CvType="Icon" DesignTimeRectangle="1301, 101, 40, 40" DesignTimeScaleFactor="1" FriendlyName="'IMAGE'" FullSelectorArgument="&lt;webctrl tag='image' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='image' type='' class='' aaname='' /&gt;" Guid="6d127469-8600-4881-afd5-c742ccac67a4" InformativeScreenshot="fb3a13e24748a6f13859b1bc6ab9cc55.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='firefox.exe' title='(2) Facebook' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="1167, 111, 20, 20" ElementType="Icon" FriendlyName="'SVG'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;span&amp;gt;div&amp;gt;svg' tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='svg' class='x19dipnz x1lliihq x1tzjh5l x1k90msu x2h7rmj x1qfuztq' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGWSURBVEhLvZQ/TgJREMZt9gCuF8ALsPaCBwDsRWpRe4jWYPAUxsQaCk9hbCyNhaWx4RDP/DaZybw/SzTZZ/Elm/lm5pt/+/a+vrcuJ/5X4P3j0y3v7t1sfuteXt88R+EA35bDl5gUpwIQVXXkiqJQrDfPmqAsD9TOtxSAj40hhxVRgcVy5TmC416/5i6mVxGHDQ6fkCOX5FWB2fwmcux2q5obDEYRhw0On5Ajl+RVAVpucnx4fIo4bHCpwuz+vCUzT1qmKlsFoG3swI4A4IudWNmbwBPIAU+A1qaX1244PNURCKhsfD6pEVaJLzHE2vEAbwf2FIGMIjxFICLh9ZHj12fKTcOdjScRhw0udUV2RzsFCIZrRYC29ssy6fiXEZEjOSLAHvhD+YlSS6ZqIMkF+BJDbOOSc8EToLJe/6ReLq+j5RgFdsCraTl+NOzEht2pAK3ZWYJWn4qUo5zprseu0zmMOCkMqEDqTFt9rjmt8KZlnrRsT5hvGQM+NoYcjWcKgTothucmHLAJAL7EpDhPIAcyC2zdD/CPNZ07BoGJAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="After opening the menu use the click activity to click on the logout button." ClickType="Single" DisplayName="Click on the Log out" sap:VirtualizedContainerService.HintSize="388,109" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="59cc1289-61bf-4511-b151-61127084149c" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.facebook.com/" CvTextArea="1044, 521, 53, 17" CvTextArgument="Log out" CvType="Text" DesignTimeRectangle="1045, 518, 280, 20" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Log out'" FullSelectorArgument="&lt;webctrl id=':rb9:' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id=':rb9:' tag='SPAN' type='' class='x193iq5w xeuugli x13faqbe x1vvkbs x1xmvt09 x1lliihq x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x xudqn12 x3x7a5m x6prxxf xvq8zen xk50ysn xzsf02u x1yc453h' aaname='Log out' check:innerText='Log out' /&gt;" Guid="0f9c7953-df79-49a3-a55b-81097ee8ed79" InformativeScreenshot="5b860605f782fa100a1a75ab7aaca175.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='firefox.exe' title='(2) Facebook' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CvTextArea="1008, 245, 100, 17" CvTextArgument="See all profiles" CvType="Text" DesignTimeRectangle="1009, 247, 272, 11" ElementType="Text" FriendlyName="'See all profiles'" FullSelectorArgument="&lt;webctrl aaname='See all profiles' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='See all profiles' tag='SPAN' type='' class='x193iq5w xeuugli x13faqbe x1vvkbs x1xmvt09 x1lliihq x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x xudqn12 x3x7a5m x6prxxf xvq8zen xk50ysn x1qq9wsj' check:innerText='See all profiles' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAARQAAAAPCAYAAAAlFjCVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAISSURBVHhe7ZjBUcMwFEQ50hD1cKMQbvRAFRxogysdUIbhDdmw+ZEsh2SSGPbNaIL8pe+1R7uTcDOFEMKJSKCEEE7GXqDcP0/T7cPPYH4puPfT62byRZ2fG+6t9wJ6V+LS+kK4NDuBcve4HyCXNMg1Bcr7x3d48NkjgRL+O9tAWWKYc3ONgTJHAiX8d3a+oWCYl7fNpAOGYZ1GDaBR3ZFJNfiG5BwaKKq7htqTOc+ouqi66SV6tSX66l5/H66j1kJYIzuBosNfTSG47gaVIcSoXmG9m4i9buQlhnWoV/21J3OG35f1VWfdp/BzRvr4mz7C34f6SQc11xTCGtn7p6wOOsPNAW4AgWEwA4zqI1jnBhwZtkKd4eh5pIv+S55L+0Sdw0jf3Pto9Qth7ewFiuDQc+BlUM1bg9qo3gMD+tpjA6VVp6+MXQNOulv4vkMDZcn7QIvPQ1g73UABmYjPOePBqN6C9R4g9PhrgTJCfZesDeHamQ0U4KBjDh18Gawyqle03sGMxwYKw6nGroHS0131tfTO6ev17YGuuWcLYQ1sA4WDX83IAXcTUW+ZSozqTjWc5scGCj08MJj7nhoo0NJdDS59zkhfqy/XAA2uo6UrhLWx8w2Fw19HRSbRqAYf1R1qWidDHRso1OmhvlxzesZ1LYx6n98ECnCt1Vf96vUQ1szwJ8+aaBk6hHA+EighhBMxTZ96Ds9mg4PoGAAAAABJRU5ErkJggg==" SearchSteps="Selector, FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence sap2010:Annotation.AnnotationText="if the Check App state activity did not find the Memories element on the screen then we login in the Facebook account." DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,123" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="Here we are typing the email of the facebook account." ClickBeforeMode="None" DisplayName="Type Into | In the Email input box" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,94" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="59cc1289-61bf-4511-b151-61127084149c" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.facebook.com/?stype=lo&amp;deoia=1&amp;jlou=Affil9AHjvZUCD-0H3iLkPdaL5Fm4Db1XMwN6h8MefAs7bOGnBTCPzxu3K76oR8gqBi9Qpex9wpIUC8GY2w6aoVpPOULka09J8y9sX66C6_cfw&amp;smuh=27429&amp;lh=Ac80_6tMS0KoZbTnByc" CvElementArea="791, 239, 368, 56" CvType="InputBox" DesignTimeRectangle="793, 241, 364, 52" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT email'" FullSelectorArgument="&lt;webctrl id='email' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='email' tag='INPUT' type='text' class='inputtext _55r1 _6luy' aaname='' /&gt;" Guid="6f22653b-d37e-415f-9759-e524b95be72f" InformativeScreenshot="a9c49c83008dc37addf19892c1e4d715.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='firefox.exe' title='Facebook – log in or sign up' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CvElementArea="791, 371, 367, 51" CvTextArea="943, 386, 63, 24" CvTextArgument="Log in" CvType="Button" DesignTimeRectangle="793, 373, 364, 48" ElementType="Button" FriendlyName="'Log in'" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='_42ft _4jy0 _6lth _4jy6 _4jy1 selected _51sy' aaname='Log in' check:innerText='Log in' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAXAAAAA0CAYAAACTp2PxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALWSURBVHhe7dsxTtxAGIbhlKm4DxdKwQG4AS1H4AC5ARJdzgAdZRpElwM4nsS/NXZmd7XIjGc2zyc9ijBmoYjejMzmy2BmZl1OwM3MOl0x4PePw3B9NwxXN8Pw9RsAe0gNTi1OTS5tEfDXt783l14IgP2kNqdG51sEXLwB2pUanW8OeDqil74AgHbkj1PmgDt9A7QvP4XPAfcLS4D2pVbH5oCXbgSgPTEBB+hMTMABOhMTcIDOxAQcoDMxAQfoTEzAAToTE3CAzsQEHKAzMQEH6ExMwKnmefq7NvwahtvC51vx8HP6Occ9fS/fA3uKCTjVCDhsIybgVNNLwKF1MQGnGgGHbcQEnGo+HPAf09dle38p3DfJH4GkPYzXnsbvGUsfl74uFB+hjH++T9eG8fOLj9P8o0RFMQGnmo8EfB3jxQqvk4c63/uWAT+0FPbVa8FniAk41Zwd8PzkncXxdjx9x/KTeH49v38d9S0CPn/f1fVTrw1biAk41Zwb8GOPPUqfy68t3j1yZmRPBnz18xfvh08UE3CqOSvgeTCz03TIT9vP40k9XTv2+sf+MVg7GfDVzyPg1BYTcKoRcNhGTMCpRsBhGzEBp5qzAj46Ft3S5/Jri5Dm8R0n4PQuJuBUMwf8xCKCh95Vkl/f5V0oAs7OYgJONecGPMnj+M8KJ/l1rGObvg9cwNlZTMCp5iMB/yOP57R47l2yiPgU+dIjl0MEnNbFBJz/whzwKeile6AXMQHnYiwet+Sn5AP/oxN6FRNwLkce6gPziINLEBNwLk7xWbtHJ1yQmIADdCYm4ACdiQk4QGdiAg7QmZiAA3QmJuAAnYkJOEBnYnPAr27KNwLQjtTq2Bzw67vyzQC0I7U6Ngf8/rF8MwDtSK2OzQFPcwoHaFd++k5bBPz1TcQBWpTanBqdbxHwWDqip5v9YhNgP6nBqcX5Y5N8xYCbmVn7E3Azsy43DL8BCNmmI4Mcj9wAAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.Text>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">Email</CSharpValue>
+                      </InArgument>
+                    </uix:NTypeInto.Text>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NTypeInto>
+                  <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="Here we are typing the Password of the facebook account." ClickBeforeMode="None" DisplayName="Type Into | In the Password input box" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,94" sap2010:WorkflowViewState.IdRef="NTypeInto_2" IsPassword="True" ScopeIdentifier="59cc1289-61bf-4511-b151-61127084149c" Version="V3">
+                    <uix:NTypeInto.SecureText>
+                      <InArgument x:TypeArguments="ss:SecureString">
+                        <CSharpValue x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">SecureString_Password</CSharpValue>
+                      </InArgument>
+                    </uix:NTypeInto.SecureText>
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.facebook.com/" CvElementArea="791, 304, 368, 55" CvType="InputBox" DesignTimeRectangle="810, 320, 300, 22" DesignTimeScaleFactor="1" ElementType="InputBoxPassword" FriendlyName="'INPUT pass'" FullSelectorArgument="&lt;webctrl id='pass' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='pass' tag='INPUT' type='password' class='inputtext _55r1 _6luy _9npi' aaname='' /&gt;" Guid="df09ca26-7f47-4971-8067-d80a84598a21" InformativeScreenshot="9b05a55d3f239340db281c7495881953.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='firefox.exe' title='Facebook – log in or sign up' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target CvElementArea="791, 304, 368, 55" CvType="InputBox" DesignTimeRectangle="791, 304, 368, 54" ElementType="InputBox" FriendlyName="'firefox.exe Facebook'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NTypeInto>
+                  <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="after entering the email and password in the text box I used the click activity for click on the login button" ClickType="Single" DisplayName="Click | On the Login button" sap:VirtualizedContainerService.HintSize="388,124" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="59cc1289-61bf-4511-b151-61127084149c" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.facebook.com/" CvElementArea="791, 371, 367, 51" CvTextArea="943, 386, 63, 24" CvTextArgument="Log in" CvType="Button" DesignTimeRectangle="793, 373, 364, 48" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Log in'" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='_42ft _4jy0 _6lth _4jy6 _4jy1 selected _51sy' aaname='Log in' check:innerText='Log in' /&gt;" Guid="3f7a41cb-38e9-4591-98b8-420e3d472fa5" InformativeScreenshot="8b188d6e1e5128263543b0585d5a3be1.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='firefox.exe' title='Facebook – log in or sign up' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target CvTextArea="908, 439, 135, 16" CvTextArgument="Forgotten password?" CvType="Text" DesignTimeRectangle="908, 438, 134, 16" ElementType="Text" FriendlyName="'Forgotten password?'" FullSelectorArgument="&lt;webctrl aaname='Forgotten password?' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Forgotten password?' tag='A' type='' class='' check:innerText='Forgotten password?' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIoAAAAUCAYAAABS66VXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALOSURBVGhD7VjBkdswDMzzunI3+biJ9ODftZHPNZEO/E4bDhYDcJYriqY4d7Yvw53hRBSIJbBcSb78uC0sDGAZZWEIyygLQ1hGWRjCtzHK9W9cBHS+8LWojHL5dbu9/WyP859Y9ASgrtPvmBh0vnAQdpY404+YAmc5b44BG6O84gEso3wyxCjQ8+09JoaraatmmTKKE6f77Poa9wHELrERxiU+EezYjHMhe5zVfWtG54leTdj7YuKcMo5559PVWl89YZbLMQx+46bQOXivvRjqLxzBn3PPoZ56vSJ2SH/bo1wTqnoMh43iRdIBfdj1pgmaAyiy8JLIWdwIZ++NonMVNkXK/ZRfoev1CUOcRXS+jKvwPO/EfI/UwO6fqCfw5/WIVtqb6qP9taA9Dv1GKZvEIesGTKpFuRhSeCX8BGc1B38jH2syX5vey0ls1hta9wqYr8d9LxY6QZ8zDBCGKL3M6q85vToM4GMzAsfeKNQMg/P4gIDqSUlwoYOcXBfP03StkWtmjKKfJq0BcEFpJB/W5j01Vy8GPnDgLeGfPlsLXfL+tP6as2M4wHvS8zL8H0Zp5DPQ/GcaxcW0UWra4ctPEobytWLYA9f4F1xuEBxq9jeo1axReloeM8rOBnwQWmirOS8oeQY5ua5qDv5GPoO5HHdyNusN5R5ypZ97fD1dOQZdzjbSGIjhh2fJndVfc3bq5d9Cii/5MasiKy8a40JHODm/Na8OL4TIJ3XGKByv6tHcOLyy3078bgyIePbmB2f7cu0jWrX05xztbwSHjQL4xrFZdUCGVqFAFofhf5418vY48w2UzeocqPJtFPENM0bxH5PBpfX44WTMBnh4D43z3r0YwDzVm5cwoz/ntP57AnBjWqyFyigPgzWiDb4SNsZaeIBRYAq4mJ5wuHvkzfUsLKNs8ZA3SvlUxHhlkwDLKFs859Oz8O2wjLIwgNvtH1JFh+24bP25AAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.facebook.com/" CvTextArea="61, 268, 67, 14" CvTextArgument="Memories" CvType="Text" DesignTimeRectangle="62, 265, 233, 20" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Memories'" FullSelectorArgument="&lt;webctrl aaname='Memories' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Memories' tag='SPAN' type='' class='x1lliihq x6ikm8r x10wlt62 x1n2onr6' check:innerText='Memories' /&gt;" Guid="b80dd62c-513a-4e72-b06e-e11d45548988" InformativeScreenshot="cae8be32f96311c1ce393220ea589020.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='firefox.exe' title='(2) Facebook' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="61, 224, 49, 14" CvTextArgument="Friends" CvType="Text" DesignTimeRectangle="62, 221, 233, 20" ElementType="Text" FriendlyName="'Friends'" FullSelectorArgument="&lt;webctrl aaname='Friends' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Friends' tag='SPAN' type='' class='x1lliihq x6ikm8r x10wlt62 x1n2onr6' check:innerText='Friends' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAO0AAAAYCAYAAAAWEnolAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGOSURBVHhe7dhBjoIwFIDh2XApPI5wGA1XgXgTY7zIZBLXHWgp7atVNGEyPvgXX2aQtrL508rX98/NANCDaAFliBZQhmgBZYgWUIZoAWWIFlBGRNtWhSkKad/JCTE3vjZt5t5SzsedKapT9h6wRXfRlserGPDfiBaQiBZQ5sVor+ZQDkflk9nbY7M7EufG28im4/XOHC7pGu7v/X3HHblHZWPaNNquDvcz84G1eyvasqxFJOl4G2wf2nm8doH537w+1hCaDTQan15PgfpoL40p41C7hmixOTMvomRwadAy2mEXTnc+v7uG/8UaNkL/Hbn54zOJaP/2xRfw6d48HsvPxXhxbJXiaMUa8c75IEj5m9atEdYEtmfhaJ/tgjPRPpiffRFl5w3xsutie5aLNg4wGhO8stPOHI8Ft17+eYH1Wi7a8Vrufv28yr9Ymom2v7bzn72I6q/D/PwzAWu3aLT+s/j3bLg/H60fM83vYxXHYzs+tzawHSJaAJ+PaAFliBZQhmgBZYgWUIZoAVVu5he/i9R2DQxyLQAAAABJRU5ErkJggg==" SearchSteps="Selector, FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NCheckState.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NCheckState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1382, 744" BrowserType="Firefox" IconBase64="AAABAAIAEBAAAAEAIABoBAAAJgAAACAgAAABACAAqBAAAI4EAAAoAAAAEAAAACAAAAABACAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP9oCCD/Zgig//Psz////////////2YI3/9nCZD/ZAhAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/2AAEP9lB5D/Zgj//2YI///r4P////////////9mCP//Zgj//2YI//9lCZD/cBAQAAAAAAAAAAAAAAAA/2AAEP9mB8//Zgj//2YI//9mCP//6+D/////////////Zgj//2YI//9mCP//Zgj//2YJz/9wEBAAAAAAAAAAAP9lB5D/Zgj//2YI//9mCP//Zgj//+vg/////////////2YI//9mCP//Zgj//2YI//9mCP//ZQmQAAAAAP9kCED/Zgj//2YI//9mCP//Zgj//2YI///r4P////////////9mCP//Zgj//2YI//9mCP//Zgj//2YI//9oCCD/ZQeQ/2YI//9mCP//Zgj//5ZV//+yg///9e//////////////soP//7KD//95J///Zgj//2YI//9mCP//Zwif/2YI3/9mCP//Zgj//2YI///Fov//////////////////////////////////lVX//2YI//9mCP//Zgj//2YHz/9mCP//Zgj//2YI//9mCP//xaL//////////////////////////////////7KD//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//6+D/////////////Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YHz/9mCP//Zgj//2YI//9mCP//Zgj//+vg/////////////3AY//9mCP//Zgj//2YI//9mCP//Zgj//2YI3/9mCKD/Zgj//2YI//9mCP//Zgj//2YI///Zwf/////////////Psf//n2T//5ZV//9mCP//Zgj//2YI//9lCZD/aAgg/2YI//9mCP//Zgj//2YI//9mCP//n2T////////////////////////Ywf//Zgj//2YI//9mCP//aAhAAAAAAP9mB4//Zgj//2YI//9mCP//Zgj//2YI//+pdP//7OD/////////////z7L//2YI//9mCP//ZgePAAAAAAAAAAD/cBAQ/2YJz/9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//ZgnP/2AQEAAAAAAAAAAAAAAAAP9wEBD/ZgeP/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//ZgeP/2AQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP9oCED/ZwmQ/2YI3/9mCP//Zgj//2YJz/9nCJ//aAggAAAAAAAAAAAAAAAAAAAAAPAPAADAAwAAgAEAAIABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIABAACAAQAAwAMAAPAPAAAoAAAAIAAAAEAAAAABACAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP9wEBD/ZQhg/+/noP///8/////v////////////697v/2YHz/9nCJ//ZQhg/3AQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP9oCCD/Zgig/2YI//9mCP//6+D////////////////////////s4P//Zgj//2YI//9mCP//ZQfv/2cJkP9oCCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP9gABD/ZQeQ/2YI//9mCP//Zgj//2YI///r4P///////////////////////+zg//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9lCZD/cBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/aAgg/2YI3/9mCP//Zgj//2YI//9mCP//Zgj//+vg////////////////////////7OD//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCN//aAggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/2UFMP9mCN//Zgj//2YI//9mCP//Zgj//2YI//9mCP//6+D////////////////////////s4P//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCN//ZQUwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP9oCCD/Zgjf/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI///r4P///////////////////////+zg//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCN//aAggAAAAAAAAAAAAAAAAAAAAAAAAAAD/YAAQ/2YI3/9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//+vg////////////////////////7OD//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCN//cBAQAAAAAAAAAAAAAAAAAAAAAP9lB5D/Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//6+D////////////////////////s4P//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9lCZAAAAAAAAAAAAAAAAD/aAgg/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI///r4P///////////////////////+zg//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9oCCAAAAAAAAAAAP9lB5D/Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//+vg////////////////////////7OD//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2cInwAAAAD/YAAQ/2UH7/9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//6+D////////////////////////s4P//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2AQEP9lCGD/Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//3kn///r4P//6+D//+vg///////////////////////////////////r4P//6+D//+vg///r4P//lVX//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zghf/2YIoP9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//eSf///////////////////////////////////////////////////////////////////////+yg///Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9nCJ//ZgfP/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//95J////////////////////////////////////////////////////////////////////////9jB//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YHz/9lB+//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//3kn////////////////////////////////////////////////////////////////////////7OD//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgfv/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//eSf/////////////////////////////////////////////////////////////////////////////cBj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//6+D////////////////////////s4P//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9lB+//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI///r4P///////////////////////+zg//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgfv/2YHz/9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//+vg/////////////////////////////2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mB8//Zgig/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//49D/////////////////////////////gzf//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2cIn/9lCGD/Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI///Psv/////////////////////////////j0f//cBj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//ZQhg/2AAEP9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//59k///////////////////////////////////17///4tD//9jB///Ywf//jEb//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YH7/9gEBAAAAAA/2YIoP9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//eSf///////////////////////////////////////////////////////+fZP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//ZQmQAAAAAAAAAAD/aAgg/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//s4T//////////////////////////////////////////////////59k//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9oCCAAAAAAAAAAAAAAAAD/ZgeP/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//s4T/////////////////////////////////////////////n2T//2YI//9mCP//Zgj//2YI//9mCP//ZgePAAAAAAAAAAAAAAAAAAAAAP9wEBD/Zgjf/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//jEX//7yT///s4P///////////////////////+PR//+VVf//Zgj//2YI//9mCP//Zgj//2YI3/9gEBAAAAAAAAAAAAAAAAAAAAAAAAAAAP9oCCD/Zgjf/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//cBj//3AY//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCN//aAggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP9lBTD/Zgjf/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgjf/2UFMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP9oCCD/Zgjf/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI3/9oCCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP9wEBD/ZgeP/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mB48AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/aAgg/2cJkP9lB+//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9nCJ//aAggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/3AQEP9lCGD/Zwif/2YJz/9lB+//Zgj//2YI//9lB+//ZgnP/2cIn/9mCF//cBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/AA///AAD//AAAP/gAAB/wAAAP4AAAB8AAAAPAAAADgAAAAYAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAABgAAAAcAAAAPAAAAD4AAAB/AAAA/4AAAf/AAAf/8AAP//wAP/" InformativeScreenshot="5d1063706995f6c456729aaace4bc1e9.png" Selector="&lt;html app='firefox.exe' title='(2) Facebook' /&gt;" Title="(2) Facebook" Url="https://www.facebook.com/" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
