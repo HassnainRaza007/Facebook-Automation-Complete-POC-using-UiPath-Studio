@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="1240,515" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="944,932" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -41,6 +41,8 @@
       <x:String>System.Security</x:String>
       <x:String>System.Linq.Expressions</x:String>
       <x:String>System.Net</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -116,14 +118,21 @@
       <AssemblyReference>System.Net.Requests</AssemblyReference>
       <AssemblyReference>System.Net.ServicePoint</AssemblyReference>
       <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sequence | Facebook Login " sap:VirtualizedContainerService.HintSize="450,446" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Sequence | Facebook Login " sap:VirtualizedContainerService.HintSize="450,867" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="sd:DataTable" Name="Login_Info" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_Login_Info" />
       <Variable x:TypeArguments="x:String" Name="Email" />
       <Variable x:TypeArguments="x:String" Name="Password" />
       <Variable x:TypeArguments="ss:SecureString" Name="SecureString_Password" />
+      <Variable x:TypeArguments="x:String" Name="Browser_Facebook_URL" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_Friend_Request_Management" />
+      <Variable x:TypeArguments="x:String" Name="Cancel_Friend_Requests" />
+      <Variable x:TypeArguments="x:String" Name="Accept_Friend_Requests" />
+      <Variable x:TypeArguments="x:String" Name="Skip_FRM" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -133,7 +142,7 @@
     <ui:ReadRange Range="{x:Null}" AddHeaders="True" sap2010:Annotation.AnnotationText="Red data of the login_Info sheet." DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="388,94" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Login_Info" WorkbookPath="Config_Folder\Config_File.xlsx">
       <ui:ReadRange.DataTable>
         <OutArgument x:TypeArguments="sd:DataTable">
-          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">Login_Info</CSharpReference>
+          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">dt_Login_Info</CSharpReference>
         </OutArgument>
       </ui:ReadRange.DataTable>
       <sap:WorkflowViewStateService.ViewState>
@@ -150,13 +159,13 @@
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="521,519" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="521,489" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:MultipleAssign sap2010:Annotation.AnnotationText="Assigne the values from the excel sheet the email and the password to the string variables" DisplayName="Multiple Assign | Assigne the login Credientials" sap:VirtualizedContainerService.HintSize="479,250" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+            <ui:MultipleAssign sap2010:Annotation.AnnotationText="Assigne the values from the excel sheet the email and the password to the string variables" DisplayName="Multiple Assign | Assigne the login Credientials" sap:VirtualizedContainerService.HintSize="479,220" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
               <ui:MultipleAssign.AssignOperations>
                 <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -220,7 +229,7 @@
       </ui:ForEachRow.Body>
       <ui:ForEachRow.DataTable>
         <InArgument x:TypeArguments="sd:DataTable">
-          <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">Login_Info</CSharpValue>
+          <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">dt_Login_Info</CSharpValue>
         </InArgument>
       </ui:ForEachRow.DataTable>
       <sap:WorkflowViewStateService.ViewState>
@@ -231,24 +240,24 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Open Facebook" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" ScopeGuid="59cc1289-61bf-4511-b151-61127084149c" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Open the facebook web page on the browser for the login." AttachMode="ByInstance" CloseMode="Never" DisplayName="Open Facebook" sap:VirtualizedContainerService.HintSize="388,94" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" ScopeGuid="59cc1289-61bf-4511-b151-61127084149c" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1016,512" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,299" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NCheckState sap2010:Annotation.AnnotationText="main purpose of this activity is that.&#xD;&#xA;if the element found the we move the control to the Target appear and log out from the account otherwise the control automatically move to the target is not appear on the screen and the we procced with the login steps of the facebook account." DisplayName="Check App State | Memories" sap:VirtualizedContainerService.HintSize="954,397" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="59cc1289-61bf-4511-b151-61127084149c" Version="V3">
+            <uix:NCheckState sap2010:Annotation.AnnotationText="main purpose of this activity is that.&#xA;if the element found the we move the control to the Target appear and log out from the account otherwise the control automatically move to the target is not appear on the screen and the we procced with the login steps of the facebook account." DisplayName="Check App State | Memories" sap:VirtualizedContainerService.HintSize="388,184" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="59cc1289-61bf-4511-b151-61127084149c" Version="V3">
               <uix:NCheckState.IfExists>
-                <Sequence sap2010:Annotation.AnnotationText="if the Check App state activity finss the Memories element on the screen then we logout it from the current logged in Facebook account." DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,123" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence sap2010:Annotation.AnnotationText="if the Check App state activity finss the Memories element on the screen then we logout it from the current logged in Facebook account." DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,1015" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                     </scg:Dictionary>
@@ -289,13 +298,89 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NClick>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_3">
+                    <ui:LogMessage.Level>
+                      <InArgument x:TypeArguments="ui:LogLevel">
+                        <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+                      </InArgument>
+                    </ui:LogMessage.Level>
+                    <ui:LogMessage.Message>
+                      <InArgument x:TypeArguments="x:Object">
+                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">"Sucessfully logout."</CSharpValue>
+                      </InArgument>
+                    </ui:LogMessage.Message>
+                  </ui:LogMessage>
+                  <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="Here we are typing the email of the facebook account." ClickBeforeMode="None" DisplayName="Type Into | In the Email input box" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,94" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="59cc1289-61bf-4511-b151-61127084149c" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.facebook.com/?stype=lo&amp;deoia=1&amp;jlou=Affil9AHjvZUCD-0H3iLkPdaL5Fm4Db1XMwN6h8MefAs7bOGnBTCPzxu3K76oR8gqBi9Qpex9wpIUC8GY2w6aoVpPOULka09J8y9sX66C6_cfw&amp;smuh=27429&amp;lh=Ac80_6tMS0KoZbTnByc" CvElementArea="791, 239, 368, 56" CvType="InputBox" DesignTimeRectangle="793, 241, 364, 52" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT email'" FullSelectorArgument="&lt;webctrl id='email' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='email' tag='INPUT' type='text' class='inputtext _55r1 _6luy' aaname='' /&gt;" Guid="6f22653b-d37e-415f-9759-e524b95be72f" InformativeScreenshot="a9c49c83008dc37addf19892c1e4d715.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='firefox.exe' title='Facebook – log in or sign up' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CvElementArea="791, 371, 367, 51" CvTextArea="943, 386, 63, 24" CvTextArgument="Log in" CvType="Button" DesignTimeRectangle="793, 373, 364, 48" ElementType="Button" FriendlyName="'Log in'" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='_42ft _4jy0 _6lth _4jy6 _4jy1 selected _51sy' aaname='Log in' check:innerText='Log in' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAXAAAAA0CAYAAACTp2PxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALWSURBVHhe7dsxTtxAGIbhlKm4DxdKwQG4AS1H4AC5ARJdzgAdZRpElwM4nsS/NXZmd7XIjGc2zyc9ijBmoYjejMzmy2BmZl1OwM3MOl0x4PePw3B9NwxXN8Pw9RsAe0gNTi1OTS5tEfDXt783l14IgP2kNqdG51sEXLwB2pUanW8OeDqil74AgHbkj1PmgDt9A7QvP4XPAfcLS4D2pVbH5oCXbgSgPTEBB+hMTMABOhMTcIDOxAQcoDMxAQfoTEzAAToTE3CAzsQEHKAzMQEH6ExMwKnmefq7NvwahtvC51vx8HP6Occ9fS/fA3uKCTjVCDhsIybgVNNLwKF1MQGnGgGHbcQEnGo+HPAf09dle38p3DfJH4GkPYzXnsbvGUsfl74uFB+hjH++T9eG8fOLj9P8o0RFMQGnmo8EfB3jxQqvk4c63/uWAT+0FPbVa8FniAk41Zwd8PzkncXxdjx9x/KTeH49v38d9S0CPn/f1fVTrw1biAk41Zwb8GOPPUqfy68t3j1yZmRPBnz18xfvh08UE3CqOSvgeTCz03TIT9vP40k9XTv2+sf+MVg7GfDVzyPg1BYTcKoRcNhGTMCpRsBhGzEBp5qzAj46Ft3S5/Jri5Dm8R0n4PQuJuBUMwf8xCKCh95Vkl/f5V0oAs7OYgJONecGPMnj+M8KJ/l1rGObvg9cwNlZTMCp5iMB/yOP57R47l2yiPgU+dIjl0MEnNbFBJz/whzwKeile6AXMQHnYiwet+Sn5AP/oxN6FRNwLkce6gPziINLEBNwLk7xWbtHJ1yQmIADdCYm4ACdiQk4QGdiAg7QmZiAA3QmJuAAnYkJOEBnYnPAr27KNwLQjtTq2Bzw67vyzQC0I7U6Ngf8/rF8MwDtSK2OzQFPcwoHaFd++k5bBPz1TcQBWpTanBqdbxHwWDqip5v9YhNgP6nBqcX5Y5N8xYCbmVn7E3Azsy43DL8BCNmmI4Mcj9wAAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.Text>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">Email</CSharpValue>
+                      </InArgument>
+                    </uix:NTypeInto.Text>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NTypeInto>
+                  <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="Here we are typing the Password of the facebook account." ClickBeforeMode="None" DisplayName="Type Into | In the Password input box" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,94" sap2010:WorkflowViewState.IdRef="NTypeInto_4" IsPassword="True" ScopeIdentifier="59cc1289-61bf-4511-b151-61127084149c" Version="V3">
+                    <uix:NTypeInto.SecureText>
+                      <InArgument x:TypeArguments="ss:SecureString">
+                        <CSharpValue x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">SecureString_Password</CSharpValue>
+                      </InArgument>
+                    </uix:NTypeInto.SecureText>
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.facebook.com/" CvElementArea="791, 304, 368, 55" CvType="InputBox" DesignTimeRectangle="810, 320, 300, 22" DesignTimeScaleFactor="1" ElementType="InputBoxPassword" FriendlyName="'INPUT pass'" FullSelectorArgument="&lt;webctrl id='pass' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='pass' tag='INPUT' type='password' class='inputtext _55r1 _6luy _9npi' aaname='' /&gt;" Guid="df09ca26-7f47-4971-8067-d80a84598a21" InformativeScreenshot="9b05a55d3f239340db281c7495881953.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='firefox.exe' title='Facebook – log in or sign up' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CvElementArea="791, 304, 368, 55" CvType="InputBox" DesignTimeRectangle="791, 304, 368, 54" ElementType="InputBox" FriendlyName="'firefox.exe Facebook'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NTypeInto>
+                  <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="after entering the email and password in the text box I used the click activity for click on the login button" ClickType="Single" DisplayName="Click | On the Login button" sap:VirtualizedContainerService.HintSize="388,124" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="59cc1289-61bf-4511-b151-61127084149c" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.facebook.com/" CvElementArea="791, 371, 367, 51" CvTextArea="943, 386, 63, 24" CvTextArgument="Log in" CvType="Button" DesignTimeRectangle="793, 373, 364, 48" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Log in'" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='_42ft _4jy0 _6lth _4jy6 _4jy1 selected _51sy' aaname='Log in' check:innerText='Log in' /&gt;" Guid="3f7a41cb-38e9-4591-98b8-420e3d472fa5" InformativeScreenshot="8b188d6e1e5128263543b0585d5a3be1.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='firefox.exe' title='Facebook – log in or sign up' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CvTextArea="908, 439, 135, 16" CvTextArgument="Forgotten password?" CvType="Text" DesignTimeRectangle="908, 438, 134, 16" ElementType="Text" FriendlyName="'Forgotten password?'" FullSelectorArgument="&lt;webctrl aaname='Forgotten password?' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Forgotten password?' tag='A' type='' class='' check:innerText='Forgotten password?' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIoAAAAUCAYAAABS66VXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALOSURBVGhD7VjBkdswDMzzunI3+biJ9ODftZHPNZEO/E4bDhYDcJYriqY4d7Yvw53hRBSIJbBcSb78uC0sDGAZZWEIyygLQ1hGWRjCtzHK9W9cBHS+8LWojHL5dbu9/WyP859Y9ASgrtPvmBh0vnAQdpY404+YAmc5b44BG6O84gEso3wyxCjQ8+09JoaraatmmTKKE6f77Poa9wHELrERxiU+EezYjHMhe5zVfWtG54leTdj7YuKcMo5559PVWl89YZbLMQx+46bQOXivvRjqLxzBn3PPoZ56vSJ2SH/bo1wTqnoMh43iRdIBfdj1pgmaAyiy8JLIWdwIZ++NonMVNkXK/ZRfoev1CUOcRXS+jKvwPO/EfI/UwO6fqCfw5/WIVtqb6qP9taA9Dv1GKZvEIesGTKpFuRhSeCX8BGc1B38jH2syX5vey0ls1hta9wqYr8d9LxY6QZ8zDBCGKL3M6q85vToM4GMzAsfeKNQMg/P4gIDqSUlwoYOcXBfP03StkWtmjKKfJq0BcEFpJB/W5j01Vy8GPnDgLeGfPlsLXfL+tP6as2M4wHvS8zL8H0Zp5DPQ/GcaxcW0UWra4ctPEobytWLYA9f4F1xuEBxq9jeo1axReloeM8rOBnwQWmirOS8oeQY5ua5qDv5GPoO5HHdyNusN5R5ypZ97fD1dOQZdzjbSGIjhh2fJndVfc3bq5d9Cii/5MasiKy8a40JHODm/Na8OL4TIJ3XGKByv6tHcOLyy3078bgyIePbmB2f7cu0jWrX05xztbwSHjQL4xrFZdUCGVqFAFofhf5418vY48w2UzeocqPJtFPENM0bxH5PBpfX44WTMBnh4D43z3r0YwDzVm5cwoz/ntP57AnBjWqyFyigPgzWiDb4SNsZaeIBRYAq4mJ5wuHvkzfUsLKNs8ZA3SvlUxHhlkwDLKFs859Oz8O2wjLIwgNvtH1JFh+24bP25AAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
                 </Sequence>
               </uix:NCheckState.IfExists>
               <uix:NCheckState.IfNotExists>
-                <Sequence sap2010:Annotation.AnnotationText="if the Check App state activity did not find the Memories element on the screen then we login in the Facebook account." DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,123" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence sap2010:Annotation.AnnotationText="if the Check App state activity did not find the Memories element on the screen then we login in the Facebook account." DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,564" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                     </scg:Dictionary>
@@ -323,7 +408,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NTypeInto>
-                  <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="Here we are typing the Password of the facebook account." ClickBeforeMode="None" DisplayName="Type Into | In the Password input box" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,94" sap2010:WorkflowViewState.IdRef="NTypeInto_2" IsPassword="True" ScopeIdentifier="59cc1289-61bf-4511-b151-61127084149c" Version="V3">
+                  <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="Here we are typing the Password of the facebook account." ClickBeforeMode="None" DisplayName="Type Into | In the Password input box" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,109" sap2010:WorkflowViewState.IdRef="NTypeInto_2" IsPassword="True" ScopeIdentifier="59cc1289-61bf-4511-b151-61127084149c" Version="V3">
                     <uix:NTypeInto.SecureText>
                       <InArgument x:TypeArguments="ss:SecureString">
                         <CSharpValue x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">SecureString_Password</CSharpValue>
@@ -332,7 +417,7 @@
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable BrowserURL="https://www.facebook.com/" CvElementArea="791, 304, 368, 55" CvType="InputBox" DesignTimeRectangle="810, 320, 300, 22" DesignTimeScaleFactor="1" ElementType="InputBoxPassword" FriendlyName="'INPUT pass'" FullSelectorArgument="&lt;webctrl id='pass' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='pass' tag='INPUT' type='password' class='inputtext _55r1 _6luy _9npi' aaname='' /&gt;" Guid="df09ca26-7f47-4971-8067-d80a84598a21" InformativeScreenshot="9b05a55d3f239340db281c7495881953.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='firefox.exe' title='Facebook – log in or sign up' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                             <uix:Target CvElementArea="791, 304, 368, 55" CvType="InputBox" DesignTimeRectangle="791, 304, 368, 54" ElementType="InputBox" FriendlyName="'firefox.exe Facebook'" SearchSteps="CV" TargetType="ComputerVisionBased" />
                           </scg:List>
                         </uix:TargetAnchorable.Anchors>
@@ -350,7 +435,7 @@
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://www.facebook.com/" CvElementArea="791, 371, 367, 51" CvTextArea="943, 386, 63, 24" CvTextArgument="Log in" CvType="Button" DesignTimeRectangle="793, 373, 364, 48" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Log in'" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='_42ft _4jy0 _6lth _4jy6 _4jy1 selected _51sy' aaname='Log in' check:innerText='Log in' /&gt;" Guid="3f7a41cb-38e9-4591-98b8-420e3d472fa5" InformativeScreenshot="8b188d6e1e5128263543b0585d5a3be1.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='firefox.exe' title='Facebook – log in or sign up' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                             <uix:Target CvTextArea="908, 439, 135, 16" CvTextArgument="Forgotten password?" CvType="Text" DesignTimeRectangle="908, 438, 134, 16" ElementType="Text" FriendlyName="'Forgotten password?'" FullSelectorArgument="&lt;webctrl aaname='Forgotten password?' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Forgotten password?' tag='A' type='' class='' check:innerText='Forgotten password?' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIoAAAAUCAYAAABS66VXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALOSURBVGhD7VjBkdswDMzzunI3+biJ9ODftZHPNZEO/E4bDhYDcJYriqY4d7Yvw53hRBSIJbBcSb78uC0sDGAZZWEIyygLQ1hGWRjCtzHK9W9cBHS+8LWojHL5dbu9/WyP859Y9ASgrtPvmBh0vnAQdpY404+YAmc5b44BG6O84gEso3wyxCjQ8+09JoaraatmmTKKE6f77Poa9wHELrERxiU+EezYjHMhe5zVfWtG54leTdj7YuKcMo5559PVWl89YZbLMQx+46bQOXivvRjqLxzBn3PPoZ56vSJ2SH/bo1wTqnoMh43iRdIBfdj1pgmaAyiy8JLIWdwIZ++NonMVNkXK/ZRfoev1CUOcRXS+jKvwPO/EfI/UwO6fqCfw5/WIVtqb6qP9taA9Dv1GKZvEIesGTKpFuRhSeCX8BGc1B38jH2syX5vey0ls1hta9wqYr8d9LxY6QZ8zDBCGKL3M6q85vToM4GMzAsfeKNQMg/P4gIDqSUlwoYOcXBfP03StkWtmjKKfJq0BcEFpJB/W5j01Vy8GPnDgLeGfPlsLXfL+tP6as2M4wHvS8zL8H0Zp5DPQ/GcaxcW0UWra4ctPEobytWLYA9f4F1xuEBxq9jeo1axReloeM8rOBnwQWmirOS8oeQY5ua5qDv5GPoO5HHdyNusN5R5ypZ97fD1dOQZdzjbSGIjhh2fJndVfc3bq5d9Cii/5MasiKy8a40JHODm/Na8OL4TIJ3XGKByv6tHcOLyy3078bgyIePbmB2f7cu0jWrX05xztbwSHjQL4xrFZdUCGVqFAFofhf5418vY48w2UzeocqPJtFPENM0bxH5PBpfX44WTMBnh4D43z3r0YwDzVm5cwoz/ntP57AnBjWqyFyigPgzWiDb4SNsZaeIBRYAq4mJ5wuHvkzfUsLKNs8ZA3SvlUxHhlkwDLKFs859Oz8O2wjLIwgNvtH1JFh+24bP25AAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, CV" />
                           </scg:List>
                         </uix:TargetAnchorable.Anchors>
@@ -378,7 +463,7 @@
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -393,8 +478,110 @@
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
+    <ui:ReadRange Range="{x:Null}" AddHeaders="True" sap2010:Annotation.AnnotationText="Red data of the login_Info sheet." DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="388,94" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Friend_Request_Management" WorkbookPath="Config_Folder\Config_File.xlsx">
+      <ui:ReadRange.DataTable>
+        <OutArgument x:TypeArguments="sd:DataTable">
+          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_11">dt_Friend_Request_Management</CSharpReference>
+        </OutArgument>
+      </ui:ReadRange.DataTable>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ReadRange>
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="ForEachRow_2" MaxIterations="1">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="521,308" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:MultipleAssign sap2010:Annotation.AnnotationText="Assigne the values from the excel sheet the email and the password to the string variables" DisplayName="Multiple Assign | Assigne the login Credientials" sap:VirtualizedContainerService.HintSize="479,220" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+              <ui:MultipleAssign.AssignOperations>
+                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_12">Cancel_Friend_Requests</CSharpReference>
+                      </OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">CurrentRow["Cancel Friend Requests"].ToString()</CSharpValue>
+                      </InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_13">Accept_Friend_Requests</CSharpReference>
+                      </OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">CurrentRow["Accept Friend Requests"].ToString()</CSharpValue>
+                      </InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_14">Skip_FRM</CSharpReference>
+                      </OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">CurrentRow["Skip FRM"].ToString()</CSharpValue>
+                      </InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                </scg:List>
+              </ui:MultipleAssign.AssignOperations>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:MultipleAssign>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+      <ui:ForEachRow.DataTable>
+        <InArgument x:TypeArguments="sd:DataTable">
+          <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">dt_Friend_Request_Management</CSharpValue>
+        </InArgument>
+      </ui:ForEachRow.DataTable>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ForEachRow>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Friend_Request_Management.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Friend_Request_Management.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Cancel_Friend_Requests">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_25">Cancel_Friend_Requests</CSharpValue>
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Accept_Friend_Requests">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_24">Accept_Friend_Requests</CSharpValue>
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Skip_FRM">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">Skip_FRM</CSharpValue>
+        </InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
   </Sequence>
 </Activity>

@@ -1,0 +1,728 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Friend_Request_Management" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uuam="clr-namespace:UiPath.UIAutomationNext.Activities.Models;assembly=UiPath.UIAutomationNext.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Cancel_Friend_Requests" Type="InArgument(x:String)" />
+    <x:Property Name="in_Accept_Friend_Requests" Type="InArgument(x:String)" />
+    <x:Property Name="in_Skip_FRM" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap:VirtualizedContainerService.HintSize>944,4796</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Friend_Request_Management" sap:VirtualizedContainerService.HintSize="794,4731" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Default="0" Name="AFR" />
+      <Variable x:TypeArguments="x:String" Default="0" Name="CFR" />
+      <Variable x:TypeArguments="x:Int32" Name="Int_CFR" />
+      <Variable x:TypeArguments="x:Int32" Name="Int_AFR" />
+      <Variable x:TypeArguments="x:String" Name="Request_Name" />
+      <Variable x:TypeArguments="ui:UiElement" Name="CurrentElement" />
+      <Variable x:TypeArguments="x:String" Name="CurrentElement_Label" />
+      <Variable x:TypeArguments="x:Int32" Name="Counter" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:MultipleAssign sap2010:Annotation.AnnotationText="Assigned the arrgument value to string variables.&#xD;&#xA;AFR = Accept_Friend_Requests&#xD;&#xA;CFR = Cancel_Friend_Requests" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="732,109" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">
+                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">AFR</CSharpReference>
+              </OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">in_Accept_Friend_Requests</CSharpValue>
+              </InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">
+                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">CFR</CSharpReference>
+              </OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">in_Cancel_Friend_Requests</CSharpValue>
+              </InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:MultipleAssign>
+    <If sap2010:Annotation.AnnotationText="Checking whether the cancel friend request value is empty or not." sap:VirtualizedContainerService.HintSize="732,109" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Condition>
+        <InArgument x:TypeArguments="x:Boolean">
+          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">!string.IsNullOrEmpty(CFR)</CSharpValue>
+        </InArgument>
+      </If.Condition>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Int32">
+                <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">Int_CFR</CSharpReference>
+              </OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Int32">
+                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">Convert.ToInt32(CFR)</CSharpValue>
+              </InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="376,229" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_1">
+            <ui:LogMessage.Level>
+              <InArgument x:TypeArguments="ui:LogLevel">
+                <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+              </InArgument>
+            </ui:LogMessage.Level>
+            <ui:LogMessage.Message>
+              <InArgument x:TypeArguments="x:Object">
+                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">"No number is entered in the sheet."</CSharpValue>
+              </InArgument>
+            </ui:LogMessage.Message>
+          </ui:LogMessage>
+        </Sequence>
+      </If.Else>
+    </If>
+    <If sap2010:Annotation.AnnotationText="Checking whether the accept friend request value is empty or not." sap:VirtualizedContainerService.HintSize="732,109" sap2010:WorkflowViewState.IdRef="If_2">
+      <If.Condition>
+        <InArgument x:TypeArguments="x:Boolean">
+          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">!string.IsNullOrEmpty(AFR)</CSharpValue>
+        </InArgument>
+      </If.Condition>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="476,169" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Int32">
+                <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">Int_AFR</CSharpReference>
+              </OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Int32">
+                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">Convert.ToInt32(AFR)</CSharpValue>
+              </InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="376,229" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_2">
+            <ui:LogMessage.Level>
+              <InArgument x:TypeArguments="ui:LogLevel">
+                <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+              </InArgument>
+            </ui:LogMessage.Level>
+            <ui:LogMessage.Message>
+              <InArgument x:TypeArguments="x:Object">
+                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">"No number is entered in the sheet."</CSharpValue>
+              </InArgument>
+            </ui:LogMessage.Message>
+          </ui:LogMessage>
+        </Sequence>
+      </If.Else>
+    </If>
+    <If sap2010:Annotation.AnnotationText="Run only when the accept friend request value is greater than 0.&#xD;&#xA;Then the control will move to the block." DisplayName="Check the condition for the AFR" sap:VirtualizedContainerService.HintSize="732,2153" sap2010:WorkflowViewState.IdRef="If_3">
+      <If.Condition>
+        <InArgument x:TypeArguments="x:Boolean">
+          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">Int_AFR &gt; 0</CSharpValue>
+        </InArgument>
+      </If.Condition>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="698,1929" sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <uix:NApplicationCard sap2010:Annotation.AnnotationText="Navigat to the facebook" AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Firefox: (5) Facebook" sap:VirtualizedContainerService.HintSize="656,1660" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="Simulate" OpenMode="IfNotOpen" ScopeGuid="c50b88f1-dfc7-4fe6-9bb4-fa68d0005dbe" Version="V2" WindowResize="Maximize">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="622,1372" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="Click on the friends button on the facebook page." ClickType="Single" DisplayName="Click 'Friends'" sap:VirtualizedContainerService.HintSize="560,94" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c50b88f1-dfc7-4fe6-9bb4-fa68d0005dbe" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.facebook.com/" CvTextArea="61, 224, 49, 14" CvTextArgument="Friends" CvType="Text" DesignTimeRectangle="62, 221, 233, 20" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Friends'" FullSelectorArgument="&lt;webctrl aaname='Friends' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Friends' tag='SPAN' type='' class='x1lliihq x6ikm8r x10wlt62 x1n2onr6' check:innerText='Friends' /&gt;" Guid="4587055b-4b9e-47af-a680-4bfe361ac751" InformativeScreenshot="0b14024c0a1f151a225d310f3223ad3a.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='firefox.exe' title='(5) Facebook' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CvTextArea="61, 268, 67, 14" CvTextArgument="Memories" CvType="Text" DesignTimeRectangle="62, 265, 233, 20" ElementType="Text" FriendlyName="'Memories'" FullSelectorArgument="&lt;webctrl aaname='Memories' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Memories' tag='SPAN' type='' class='x1lliihq x6ikm8r x10wlt62 x1n2onr6' check:innerText='Memories' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAO0AAAAYCAYAAAAWEnolAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIISURBVHhe7ZjLjcIwEED3kqZCOYRiQLRCRCdoRSNoJc5ef5LY49ghnMjsvsOTSDweD5Kfx/D1+HkaANAD0gIoA2kBlIG0AMpAWgBlIC2AMpAWQBlC2kvXmKbZmeO3DIpczb6xMd21MPZ5Qv0HcymMAfwVCtI2pj3dRdDI7bQzbbvbrLQA/4GZtF7KYre6m2M7jCMtwMeYS3u6ejn3vQx89AfTtGdzsd02l9Z1YNehA/J6neYcY3zu77NppznzQ0LmtIg1wwGy74fr+jA/rCVvCUu1+e9UGwPYKAVp72GjW0FvtbFEoFmsFyFK6OalQkwSTXOCgLOcQuQ8Zuz6h8IBEaVdrM0fGomo/RlpQQVFacMfTsmG9hs8bHYpbRbnGbtgePbSii4ZuqPo5EMXD3KVclqSGiZps64qpX1Rm8gHoIeKtPJzKqqQVlwvJam0Uq6CTKm0Wacuz5MHw4hY62VtIUd8BtBBVdrYidzmjpLNpV3uVp+VdkUn9d/TybsiFmAD1KUdxegSoSxCWr/hMwEz3pa2llNcZ1dIu6K2SMgn6wTYJgvSWny3ku/kb9owR3YpK0AXJX9bWksxp5BqhbTDc7U2u2acX84HsEWWpfWCyWtjLq0jyBHJxXlXWodfp5JzrbTju2Ke6Vpcyg+wXYS0ALB9kBZAGUgLoAykBVAG0gIoA2kBVPE0v3AAO+gROqWVAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="Click on the friend request button on the facebook page." ClickType="Single" DisplayName="Click 'Friend requests'" sap:VirtualizedContainerService.HintSize="560,94" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c50b88f1-dfc7-4fe6-9bb4-fa68d0005dbe" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.facebook.com/friends" CvTextArea="71, 275, 117, 20" CvTextArgument="Friend requests" CvType="Text" DesignTimeRectangle="72, 272, 115, 22" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Friend requests'" FullSelectorArgument="&lt;webctrl parentid=':r77:' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid=':r77:' tag='SPAN' type='' class='x193iq5w xeuugli x13faqbe x1vvkbs x1xmvt09 x1lkfr7t x1lbecb7 xk50ysn xzsf02u' aaname='Friend requests' check:innerText='Friend requests' /&gt;" Guid="1c3326cc-b7ea-43a5-a08e-a861a2e80493" InformativeScreenshot="f7018fa6194a144b2ae2041de2e116bf.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='firefox.exe' title='(9) Friends | Facebook' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CvTextArea="71, 275, 117, 20" CvTextArgument="Friend requests" CvType="Text" DesignTimeRectangle="72, 266, 248, 36" FriendlyName="'Friend requests'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;a&amp;gt;div&amp;gt;div&amp;gt;div' idx='4' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='x1qjc9v5 x1q0q8m5 x1qhh985 xu3j5b3 xcfux6l x26u7qi xm0m39n x13fuv20 x972fbf x9f619 x78zum5 x1r8uery xdt5ytf x1iyjqo2 xs83m0k x1qughib xat24cr x11i5rnm x1mh8g0r xdj266r x2lwn1j xeuugli x4uap5 xkhd6sd xz9dl7a xsag5q8 x1n2onr6 x1ja2u2z' tag='DIV' aaname='' check:innerText='Friend requests' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPwAAAAoCAYAAADaBJdeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALvSURBVHhe7ZjbkeMgEADvx1ESjmJxJorEiegEjKQBBj18q731TncVH0IMGigasP9MAOAGhAdwBMIDOALhARyB8ACOQHgARyA8gCMQHsARCA/gCIQHcATCAzgC4QEcgfAAjvga4cdhejzC9HzJ8+2M0/B4TOH7PgjwKyiEfz3DLO6jLcMoLTog/L28nlP41vmF34oh/DDr9NNBeIB3QPhPAOHhi7gmfLq6z+/TAozXfVmES31uJbymZ1A/C8JzrlGsMVne3Z8Pqe3WZhhPCL9KsvWvux6HrT97zG3+YzU/ab7qcUlck9s6Z7kcvV++U+aZyzqOTgxAjzeED1MIVZtGeJFMGZYWrpZjlVjFSZ0WM+ekT7dNxDPCh1CfjBKvcmnH3eZv5Xta+GZc9YaVn8vPqXzWzUueEwcxAAan/rRbF5UhZCLVVyIUAkWqBWr2JTJujZpFnZCT7Vh4o036rr0JLG1tkWNonI+rwtdjEvScVfPXYAl/FANg8NYJXztULr7OAq9F6CzY4ibQ+94cVZ6QBiJ865nqX5HqU+Ne/u38nBK+k0euX8aWx2PllbCEP4oBMHjvN7w8rljCx8VolOvCW/mcFb7dLPIp3SlKeKvvfxHe/F6RnwicSjXmzlh2YwAMbhN+V8bI/xTeOL037hDekrVHji82g8M+jBgAgxuEl36OrppnhJfT0b4Ovyd8dwyKIgdFvh2oWLOvejM6uQEW5D7WcZ/aNKoYAINbhF8WX3mSxoV/JEusLmVrJFv6LqQy6Eoip2El9DiotsaGkufGzkW3y/lWuaWxVjLGbywV8/viXWqvczdkPowBaLlJ+Mgm5lJaCdq+rNN1kSiXuKhb0Rp2T8XlCqxKYc+MSK/fm/OTxrG1G8bOiV61K+TceydsG46IfyIGoKYQHvY53BABfjgIfwGEh08H4S+A8PDpIPwFEB4+HYQHcATCAzgC4QEcgfAAjkB4AEcgPIAjEB7AEQgP4AiEB3AEwgO4YZr+Atc7PM+Ak8yCAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                  <uix:NForEachUiElement sap2010:Annotation.AnnotationText="Loading the friend requests. So that we can iterate each element indivisually." DelayBefore="5" DisplayName="For Each UI Element" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='CurrentElement'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="560,989" sap2010:WorkflowViewState.IdRef="NForEachUiElement_3" LimitExtractionTo="Rows" MaximumResults="5" ScopeIdentifier="c50b88f1-dfc7-4fe6-9bb4-fa68d0005dbe" Version="V3">
+                    <uix:NForEachUiElement.Body>
+                      <ActivityAction x:TypeArguments="x:Int32">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,653" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign sap2010:Annotation.AnnotationText="Getting only the name of the friend request." sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="Assign_5">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">
+                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_10">CurrentElement_Label</CSharpReference>
+                              </OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_49">CurrentElement_Label.Split(new[] { '\r', '\n' }, StringSplitOptions.None)[0]</CSharpValue>
+                              </InArgument>
+                            </Assign.Value>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Assign>
+                          <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="Click on the request. So, that the profile is opend." ClickType="Single" DisplayName="Click 'Naeem Baba'" sap:VirtualizedContainerService.HintSize="434,188" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c50b88f1-dfc7-4fe6-9bb4-fa68d0005dbe" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="https://www.facebook.com/friends/requests" CvTextArea="95, 273, 88, 14" CvTextArgument="Naeem Baba" CvType="Text" DesignTimeRectangle="96, 270, 87, 20" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Naeem Baba'" Guid="8f70d07b-78ba-4c4c-9cc3-672039804a05" InformativeScreenshot="fcc5140eafa63d3dc2e09b1b1fb64c3c.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='Friend Requests | Facebook' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                                <uix:TargetAnchorable.FullSelectorArgument>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_50">string.Format("&lt;webctrl aaname='{0}' tag='SPAN' /&gt;", CurrentElement_Label)</CSharpValue>
+                                  </InArgument>
+                                </uix:TargetAnchorable.FullSelectorArgument>
+                                <uix:TargetAnchorable.FuzzySelectorArgument>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_51">string.Format("&lt;webctrl aaname='{0}' tag='SPAN' type='' class='x193iq5w xeuugli x13faqbe x1vvkbs x1xmvt09 x6prxxf xvq8zen x1s688f xzsf02u' check:text='{0}' /&gt;", CurrentElement_Label)</CSharpValue>
+                                  </InArgument>
+                                </uix:TargetAnchorable.FuzzySelectorArgument>
+                              </uix:TargetAnchorable>
+                            </uix:NClick.Target>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NClick>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Confirm request'" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NClick_16" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c50b88f1-dfc7-4fe6-9bb4-fa68d0005dbe" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="https://www.facebook.com/profile.php?id=100041986718321" CvElementArea="1008, 319, 136, 40" CvTextArea="1020, 332, 112, 17" CvTextArgument="Confirm request" CvType="Button" DesignTimeRectangle="1009, 321, 134, 36" DesignTimeScaleFactor="1" FriendlyName="'Confirm request'" FullSelectorArgument="&lt;webctrl aria-role='none' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='4' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='none' type='' class='x1n2onr6 x1ja2u2z x78zum5 x2lah0s xl56j7k x6s0dn4 xozqiw3 x1q0g3np xi112ho x17zwfj4 x585lrc x1403ito x972fbf xcfux6l x1qhh985 xm0m39n x9f619 xn6708d x1ye3gou xtvsq51 x1r1pt67' tag='DIV' aaname='' check:innerText='Confirm request' /&gt;" Guid="d84fef4b-49f8-40cf-ba40-86f145c5b0ad" InformativeScreenshot="c1165927dd4ca9b5c03360f2da7f68c9.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='firefox.exe' title='(1) Friend Requests | Facebook' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                    <uix:Target CvElementArea="1008, 319, 136, 40" CvTextArea="1020, 332, 112, 17" CvTextArgument="Confirm request" CvType="Button" DesignTimeRectangle="1021, 329, 110, 20" ElementType="Text" FriendlyName="'Confirm request'" FullSelectorArgument="&lt;webctrl aaname='Confirm request' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Confirm request' tag='SPAN' type='' class='x1lliihq x6ikm8r x10wlt62 x1n2onr6 xlyipyv xuxw1ft' check:innerText='Confirm request' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHIAAAAYCAYAAAAmsqlBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIsSURBVGhD7ZXNbcMwDIV77FidppdM0nNG6BI5dItes0CncElXT6GeSCtGk6IRSOABiUXx75Psp+fXZUk9vhLkJEqQkyhBTqIEOYkS5CRKkJPIBfnysXR2eu/9fiubR+Mfv+SH6MXxTW2rA7kOU+z4Zp7LkG8OUuKp2bgJcqzD58/cDvS8AQmnBuKdhNt4j5s+s8YgBd5ZPcTROnjqXr20BzfrQH5IjmKs6RrfyHqwTBz1O+kP8TvaOKWGda3Y1oGMYusa98dx8NZaTX6fyn/sX2so9TR7RPZts5mnvLFg9dNjTf7D/wLSedV56m6tcwCQ8CyFRj7ejYxA8gAAC3vtwWiGSfusoth4zlDRb9d/mZvaHpCbecq86vzUn3rFPqiC9AbbyUmg4uYA0ibjZ3tA1qEVdZDKMJvGg4Z5vYnt9Wefeesi7m0IcpSn9OOxGIK86kYGPgyFgai4gD0guegOpDOYa0E266U/z7YGzLGGIEd5EKOYrTHqq/tGNqeEFTQyG0jub7TOsa4FGeYpQlw1+EZ9XUCK1mSOU1UAm4M/LMjRYQ7WeW4eyKbmUR6SjRf11YBEgs5Rhs0non5bnKIeFqQIUOy3U33hx9DQhxqeITZiVB9T82YemUk0X8Sy+1QtyCIkscYJrbkn1BRt9/AA/htIu1aNelnzw8SX4bKP1rU1k2pYl5k0Jn7Y08QWfzxzQab2yQP510qQN1CCnEQJMnUzJchJlCCn0LJ8A5hZQ4MREV9iAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                        </Sequence>
+                      </ActivityAction>
+                    </uix:NForEachUiElement.Body>
+                    <uix:NForEachUiElement.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="8, 149, 360, 587" DesignTimeScaleFactor="1" FriendlyName="'FriendsFriend Requests3…'" FullSelectorArgument="&lt;webctrl aria-label='Friend Requests' aria-role='navigation' tag='DIV' /&gt;" Guid="1a3be177-06d7-4f43-8521-a850dc79053e" InformativeScreenshot="9d6322bfc7f119755042f3403c300e7f.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='Friend Requests | Facebook' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NForEachUiElement.Target>
+                    <uix:NForEachUiElement.Variables>
+                      <Variable x:TypeArguments="ui:UiElement" Name="CurrentElement" />
+                      <Variable x:TypeArguments="x:String" Name="CurrentElement_Label" />
+                    </uix:NForEachUiElement.Variables>
+                    <uix:NForEachUiElement.VariablesMetadata>
+                      <scg:List x:TypeArguments="uuam:VariableMetadata" x:Key="Column0" Capacity="4">
+                        <uuam:VariableMetadata Name="CurrentElement" Type="ui:UiElement" />
+                        <uuam:VariableMetadata Name="CurrentElement_Label" Type="x:String" />
+                      </scg:List>
+                    </uix:NForEachUiElement.VariablesMetadata>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NForEachUiElement>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-8, -8, 1382, 744" BrowserType="Firefox" IconBase64="AAABAAIAEBAAAAEAIABoBAAAJgAAACAgAAABACAAqBAAAI4EAAAoAAAAEAAAACAAAAABACAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP9oCCD/Zgig//Psz////////////2YI3/9nCZD/ZAhAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/2AAEP9lB5D/Zgj//2YI///r4P////////////9mCP//Zgj//2YI//9lCZD/cBAQAAAAAAAAAAAAAAAA/2AAEP9mB8//Zgj//2YI//9mCP//6+D/////////////Zgj//2YI//9mCP//Zgj//2YJz/9wEBAAAAAAAAAAAP9lB5D/Zgj//2YI//9mCP//Zgj//+vg/////////////2YI//9mCP//Zgj//2YI//9mCP//ZQmQAAAAAP9kCED/Zgj//2YI//9mCP//Zgj//2YI///r4P////////////9mCP//Zgj//2YI//9mCP//Zgj//2YI//9oCCD/ZQeQ/2YI//9mCP//Zgj//5ZV//+yg///9e//////////////soP//7KD//95J///Zgj//2YI//9mCP//Zwif/2YI3/9mCP//Zgj//2YI///Fov//////////////////////////////////lVX//2YI//9mCP//Zgj//2YHz/9mCP//Zgj//2YI//9mCP//xaL//////////////////////////////////7KD//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//6+D/////////////Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YHz/9mCP//Zgj//2YI//9mCP//Zgj//+vg/////////////3AY//9mCP//Zgj//2YI//9mCP//Zgj//2YI3/9mCKD/Zgj//2YI//9mCP//Zgj//2YI///Zwf/////////////Psf//n2T//5ZV//9mCP//Zgj//2YI//9lCZD/aAgg/2YI//9mCP//Zgj//2YI//9mCP//n2T////////////////////////Ywf//Zgj//2YI//9mCP//aAhAAAAAAP9mB4//Zgj//2YI//9mCP//Zgj//2YI//+pdP//7OD/////////////z7L//2YI//9mCP//ZgePAAAAAAAAAAD/cBAQ/2YJz/9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//ZgnP/2AQEAAAAAAAAAAAAAAAAP9wEBD/ZgeP/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//ZgeP/2AQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP9oCED/ZwmQ/2YI3/9mCP//Zgj//2YJz/9nCJ//aAggAAAAAAAAAAAAAAAAAAAAAPAPAADAAwAAgAEAAIABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIABAACAAQAAwAMAAPAPAAAoAAAAIAAAAEAAAAABACAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP9wEBD/ZQhg/+/noP///8/////v////////////697v/2YHz/9nCJ//ZQhg/3AQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP9oCCD/Zgig/2YI//9mCP//6+D////////////////////////s4P//Zgj//2YI//9mCP//ZQfv/2cJkP9oCCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP9gABD/ZQeQ/2YI//9mCP//Zgj//2YI///r4P///////////////////////+zg//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9lCZD/cBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/aAgg/2YI3/9mCP//Zgj//2YI//9mCP//Zgj//+vg////////////////////////7OD//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCN//aAggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/2UFMP9mCN//Zgj//2YI//9mCP//Zgj//2YI//9mCP//6+D////////////////////////s4P//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCN//ZQUwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP9oCCD/Zgjf/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI///r4P///////////////////////+zg//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCN//aAggAAAAAAAAAAAAAAAAAAAAAAAAAAD/YAAQ/2YI3/9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//+vg////////////////////////7OD//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCN//cBAQAAAAAAAAAAAAAAAAAAAAAP9lB5D/Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//6+D////////////////////////s4P//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9lCZAAAAAAAAAAAAAAAAD/aAgg/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI///r4P///////////////////////+zg//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9oCCAAAAAAAAAAAP9lB5D/Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//+vg////////////////////////7OD//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2cInwAAAAD/YAAQ/2UH7/9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//6+D////////////////////////s4P//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2AQEP9lCGD/Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//3kn///r4P//6+D//+vg///////////////////////////////////r4P//6+D//+vg///r4P//lVX//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zghf/2YIoP9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//eSf///////////////////////////////////////////////////////////////////////+yg///Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9nCJ//ZgfP/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//95J////////////////////////////////////////////////////////////////////////9jB//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YHz/9lB+//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//3kn////////////////////////////////////////////////////////////////////////7OD//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgfv/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//eSf/////////////////////////////////////////////////////////////////////////////cBj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//6+D////////////////////////s4P//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9lB+//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI///r4P///////////////////////+zg//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgfv/2YHz/9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//+vg/////////////////////////////2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mB8//Zgig/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//49D/////////////////////////////gzf//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2cIn/9lCGD/Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI///Psv/////////////////////////////j0f//cBj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//ZQhg/2AAEP9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//59k///////////////////////////////////17///4tD//9jB///Ywf//jEb//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YH7/9gEBAAAAAA/2YIoP9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//eSf///////////////////////////////////////////////////////+fZP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//ZQmQAAAAAAAAAAD/aAgg/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//s4T//////////////////////////////////////////////////59k//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9oCCAAAAAAAAAAAAAAAAD/ZgeP/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//s4T/////////////////////////////////////////////n2T//2YI//9mCP//Zgj//2YI//9mCP//ZgePAAAAAAAAAAAAAAAAAAAAAP9wEBD/Zgjf/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//jEX//7yT///s4P///////////////////////+PR//+VVf//Zgj//2YI//9mCP//Zgj//2YI3/9gEBAAAAAAAAAAAAAAAAAAAAAAAAAAAP9oCCD/Zgjf/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//cBj//3AY//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCN//aAggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP9lBTD/Zgjf/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgjf/2UFMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP9oCCD/Zgjf/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI3/9oCCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP9wEBD/ZgeP/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mB48AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/aAgg/2cJkP9lB+//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9nCJ//aAggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/3AQEP9lCGD/Zwif/2YJz/9lB+//Zgj//2YI//9lB+//ZgnP/2cIn/9mCF//cBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/AA///AAD//AAAP/gAAB/wAAAP4AAAB8AAAAPAAAADgAAAAYAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAABgAAAAcAAAAPAAAAD4AAAB/AAAA/4AAAf/AAAf/8AAP//wAP/" InformativeScreenshot="869f761d62d227729ff48e5917cfb292.png" Selector="&lt;html app='firefox.exe' title='(5) Facebook' /&gt;" Title="(5) Facebook" Url="https://www.facebook.com/" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="656,141" sap2010:WorkflowViewState.IdRef="LogMessage_5">
+            <ui:LogMessage.Level>
+              <InArgument x:TypeArguments="ui:LogLevel">
+                <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_43">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+              </InArgument>
+            </ui:LogMessage.Level>
+            <ui:LogMessage.Message>
+              <InArgument x:TypeArguments="x:Object">
+                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_42">"Log message for the AFR"</CSharpValue>
+              </InArgument>
+            </ui:LogMessage.Message>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:LogMessage>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="376,173" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,85" sap2010:WorkflowViewState.IdRef="MessageBox_5">
+            <ui:MessageBox.Text>
+              <InArgument x:TypeArguments="x:Object">
+                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_39">"Input value for the accept friend request column is 0."</CSharpValue>
+              </InArgument>
+            </ui:MessageBox.Text>
+          </ui:MessageBox>
+        </Sequence>
+      </If.Else>
+    </If>
+    <If sap2010:Annotation.AnnotationText="Run only when the cancel friend request value is greater than 0.&#xD;&#xA;Then the control will move to the block." DisplayName="Check the condition for the CFR" sap:VirtualizedContainerService.HintSize="732,1980" sap2010:WorkflowViewState.IdRef="If_4">
+      <If.Condition>
+        <InArgument x:TypeArguments="x:Boolean">
+          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_40">Int_CFR &gt; 0</CSharpValue>
+        </InArgument>
+      </If.Condition>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="698,1756" sap2010:WorkflowViewState.IdRef="Sequence_13">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <uix:NApplicationCard sap2010:Annotation.AnnotationText="Navigat to the facebook" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Firefox: (5) Facebook" sap:VirtualizedContainerService.HintSize="656,1576" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="Simulate" OpenMode="Always" ScopeGuid="c50b88f1-dfc7-4fe6-9bb4-fa68d0005dbe" Version="V2" WindowResize="Maximize">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="622,1288" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="560,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,205" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="Click on the friends button on the facebook page." ClickType="Single" DisplayName="Click 'Friends'" sap:VirtualizedContainerService.HintSize="388,94" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c50b88f1-dfc7-4fe6-9bb4-fa68d0005dbe" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://www.facebook.com/" CvTextArea="61, 224, 49, 14" CvTextArgument="Friends" CvType="Text" DesignTimeRectangle="62, 221, 233, 20" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Friends'" FullSelectorArgument="&lt;webctrl aaname='Friends' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Friends' tag='SPAN' type='' class='x1lliihq x6ikm8r x10wlt62 x1n2onr6' check:innerText='Friends' /&gt;" Guid="4587055b-4b9e-47af-a680-4bfe361ac751" InformativeScreenshot="0b14024c0a1f151a225d310f3223ad3a.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='firefox.exe' title='(5) Facebook' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CvTextArea="61, 268, 67, 14" CvTextArgument="Memories" CvType="Text" DesignTimeRectangle="62, 265, 233, 20" ElementType="Text" FriendlyName="'Memories'" FullSelectorArgument="&lt;webctrl aaname='Memories' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Memories' tag='SPAN' type='' class='x1lliihq x6ikm8r x10wlt62 x1n2onr6' check:innerText='Memories' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAO0AAAAYCAYAAAAWEnolAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIISURBVHhe7ZjLjcIwEED3kqZCOYRiQLRCRCdoRSNoJc5ef5LY49ghnMjsvsOTSDweD5Kfx/D1+HkaANAD0gIoA2kBlIG0AMpAWgBlIC2AMpAWQBlC2kvXmKbZmeO3DIpczb6xMd21MPZ5Qv0HcymMAfwVCtI2pj3dRdDI7bQzbbvbrLQA/4GZtF7KYre6m2M7jCMtwMeYS3u6ejn3vQx89AfTtGdzsd02l9Z1YNehA/J6neYcY3zu77NppznzQ0LmtIg1wwGy74fr+jA/rCVvCUu1+e9UGwPYKAVp72GjW0FvtbFEoFmsFyFK6OalQkwSTXOCgLOcQuQ8Zuz6h8IBEaVdrM0fGomo/RlpQQVFacMfTsmG9hs8bHYpbRbnGbtgePbSii4ZuqPo5EMXD3KVclqSGiZps64qpX1Rm8gHoIeKtPJzKqqQVlwvJam0Uq6CTKm0Wacuz5MHw4hY62VtIUd8BtBBVdrYidzmjpLNpV3uVp+VdkUn9d/TybsiFmAD1KUdxegSoSxCWr/hMwEz3pa2llNcZ1dIu6K2SMgn6wTYJgvSWny3ku/kb9owR3YpK0AXJX9bWksxp5BqhbTDc7U2u2acX84HsEWWpfWCyWtjLq0jyBHJxXlXWodfp5JzrbTju2Ke6Vpcyg+wXYS0ALB9kBZAGUgLoAykBVAG0gIoA2kBVPE0v3AAO+gROqWVAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NClick>
+                      </Sequence>
+                    </ui:CommentOut.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:CommentOut>
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="560,52" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,205" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="Click on the friend request button on the facebook page." ClickType="Single" DisplayName="Click 'Friend requests'" sap:VirtualizedContainerService.HintSize="388,94" sap2010:WorkflowViewState.IdRef="NClick_14" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c50b88f1-dfc7-4fe6-9bb4-fa68d0005dbe" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://www.facebook.com/friends" CvTextArea="71, 275, 117, 20" CvTextArgument="Friend requests" CvType="Text" DesignTimeRectangle="72, 272, 115, 22" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Friend requests'" FullSelectorArgument="&lt;webctrl parentid=':r77:' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid=':r77:' tag='SPAN' type='' class='x193iq5w xeuugli x13faqbe x1vvkbs x1xmvt09 x1lkfr7t x1lbecb7 xk50ysn xzsf02u' aaname='Friend requests' check:innerText='Friend requests' /&gt;" Guid="1c3326cc-b7ea-43a5-a08e-a861a2e80493" InformativeScreenshot="f7018fa6194a144b2ae2041de2e116bf.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='firefox.exe' title='(9) Friends | Facebook' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CvTextArea="71, 275, 117, 20" CvTextArgument="Friend requests" CvType="Text" DesignTimeRectangle="72, 266, 248, 36" FriendlyName="'Friend requests'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;a&amp;gt;div&amp;gt;div&amp;gt;div' idx='4' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='x1qjc9v5 x1q0q8m5 x1qhh985 xu3j5b3 xcfux6l x26u7qi xm0m39n x13fuv20 x972fbf x9f619 x78zum5 x1r8uery xdt5ytf x1iyjqo2 xs83m0k x1qughib xat24cr x11i5rnm x1mh8g0r xdj266r x2lwn1j xeuugli x4uap5 xkhd6sd xz9dl7a xsag5q8 x1n2onr6 x1ja2u2z' tag='DIV' aaname='' check:innerText='Friend requests' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPwAAAAoCAYAAADaBJdeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALvSURBVHhe7ZjbkeMgEADvx1ESjmJxJorEiegEjKQBBj18q731TncVH0IMGigasP9MAOAGhAdwBMIDOALhARyB8ACOQHgARyA8gCMQHsARCA/gCIQHcATCAzgC4QEcgfAAjvga4cdhejzC9HzJ8+2M0/B4TOH7PgjwKyiEfz3DLO6jLcMoLTog/L28nlP41vmF34oh/DDr9NNBeIB3QPhPAOHhi7gmfLq6z+/TAozXfVmES31uJbymZ1A/C8JzrlGsMVne3Z8Pqe3WZhhPCL9KsvWvux6HrT97zG3+YzU/ab7qcUlck9s6Z7kcvV++U+aZyzqOTgxAjzeED1MIVZtGeJFMGZYWrpZjlVjFSZ0WM+ekT7dNxDPCh1CfjBKvcmnH3eZv5Xta+GZc9YaVn8vPqXzWzUueEwcxAAan/rRbF5UhZCLVVyIUAkWqBWr2JTJujZpFnZCT7Vh4o036rr0JLG1tkWNonI+rwtdjEvScVfPXYAl/FANg8NYJXztULr7OAq9F6CzY4ibQ+94cVZ6QBiJ865nqX5HqU+Ne/u38nBK+k0euX8aWx2PllbCEP4oBMHjvN7w8rljCx8VolOvCW/mcFb7dLPIp3SlKeKvvfxHe/F6RnwicSjXmzlh2YwAMbhN+V8bI/xTeOL037hDekrVHji82g8M+jBgAgxuEl36OrppnhJfT0b4Ovyd8dwyKIgdFvh2oWLOvejM6uQEW5D7WcZ/aNKoYAINbhF8WX3mSxoV/JEusLmVrJFv6LqQy6Eoip2El9DiotsaGkufGzkW3y/lWuaWxVjLGbywV8/viXWqvczdkPowBaLlJ+Mgm5lJaCdq+rNN1kSiXuKhb0Rp2T8XlCqxKYc+MSK/fm/OTxrG1G8bOiV61K+TceydsG46IfyIGoKYQHvY53BABfjgIfwGEh08H4S+A8PDpIPwFEB4+HYQHcATCAzgC4QEcgfAAjkB4AEcgPIAjEB7AEQgP4AiEB3AEwgO4YZr+Atc7PM+Ak8yCAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NClick>
+                      </Sequence>
+                    </ui:CommentOut.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:CommentOut>
+                  <uix:NForEachUiElement sap2010:Annotation.AnnotationText="Loading the friend requests. So that we can iterate each element indivisually." DelayBefore="5" DisplayName="For Each UI Element" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='CurrentElement'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="560,989" sap2010:WorkflowViewState.IdRef="NForEachUiElement_4" LimitExtractionTo="Rows" MaximumResults="5" ScopeIdentifier="c50b88f1-dfc7-4fe6-9bb4-fa68d0005dbe" Version="V3">
+                    <uix:NForEachUiElement.Body>
+                      <ActivityAction x:TypeArguments="x:Int32">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,653" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign sap2010:Annotation.AnnotationText="Getting only the name of the friend request." sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="Assign_6">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">
+                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_11">CurrentElement_Label</CSharpReference>
+                              </OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_52">CurrentElement_Label.Split(new[] { '\r', '\n' }, StringSplitOptions.None)[0]</CSharpValue>
+                              </InArgument>
+                            </Assign.Value>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Assign>
+                          <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="Click on the request. So, that the profile is opend." ClickType="Single" DisplayName="Click 'Naeem Baba'" sap:VirtualizedContainerService.HintSize="434,188" sap2010:WorkflowViewState.IdRef="NClick_15" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c50b88f1-dfc7-4fe6-9bb4-fa68d0005dbe" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="https://www.facebook.com/friends/requests" CvTextArea="95, 273, 88, 14" CvTextArgument="Naeem Baba" CvType="Text" DesignTimeRectangle="96, 270, 87, 20" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Naeem Baba'" Guid="8f70d07b-78ba-4c4c-9cc3-672039804a05" InformativeScreenshot="fcc5140eafa63d3dc2e09b1b1fb64c3c.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='Friend Requests | Facebook' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                                <uix:TargetAnchorable.FullSelectorArgument>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_53">string.Format("&lt;webctrl aaname='{0}' tag='SPAN' /&gt;", CurrentElement_Label)</CSharpValue>
+                                  </InArgument>
+                                </uix:TargetAnchorable.FullSelectorArgument>
+                                <uix:TargetAnchorable.FuzzySelectorArgument>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_54">string.Format("&lt;webctrl aaname='{0}' tag='SPAN' type='' class='x193iq5w xeuugli x13faqbe x1vvkbs x1xmvt09 x6prxxf xvq8zen x1s688f xzsf02u' check:text='{0}' /&gt;", CurrentElement_Label)</CSharpValue>
+                                  </InArgument>
+                                </uix:TargetAnchorable.FuzzySelectorArgument>
+                              </uix:TargetAnchorable>
+                            </uix:NClick.Target>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NClick>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Delete request'" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NClick_17" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c50b88f1-dfc7-4fe6-9bb4-fa68d0005dbe" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="https://www.facebook.com/profile.php?id=100041986718321" CvElementArea="1149, 319, 138, 40" CvTextArea="1167, 332, 101, 17" CvTextArgument="Delete request" CvType="Button" DesignTimeRectangle="1151, 321, 134, 36" DesignTimeScaleFactor="1" FriendlyName="'Delete request'" FullSelectorArgument="&lt;webctrl aria-role='none' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='5' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='none' type='' class='x1n2onr6 x1ja2u2z x78zum5 x2lah0s xl56j7k x6s0dn4 xozqiw3 x1q0g3np xi112ho x17zwfj4 x585lrc x1403ito x972fbf xcfux6l x1qhh985 xm0m39n x9f619 xn6708d x1ye3gou x1qhmfi1 x1r1pt67' tag='DIV' aaname='' check:innerText='Delete request' /&gt;" Guid="ffa3690f-1eaf-4ecd-9463-3d0e0dc49802" InformativeScreenshot="ea3024c8fad62f05f00ae8fa68654ae0.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='firefox.exe' title='(1) Friend Requests | Facebook' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                    <uix:Target CvElementArea="1149, 319, 138, 40" CvTextArea="1167, 332, 101, 17" CvTextArgument="Delete request" CvType="Button" DesignTimeRectangle="1168, 329, 99, 20" ElementType="Text" FriendlyName="'Delete request'" FullSelectorArgument="&lt;webctrl aaname='Delete request' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;span' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Delete request' type='' tag='SPAN' class='x1lliihq x6ikm8r x10wlt62 x1n2onr6 xlyipyv xuxw1ft' check:innerText='Delete request' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGcAAAAYCAYAAADnNePtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHzSURBVGhD7ZZLjsMgDIZn0zOlp0mUq6RSTxJFykHaTa9RzaaHYMKAE2wMhnYxSOPFt4jxkz+BfD2/X0ZpExWnYVSchlFxGkbFaRgVp2FUnIZB4szDyZxOMf2Cg2QeZuq22O5qbuy6UgIjzmjmwPa8X01nRara6Hpx2Nr/hNTssjgWEGhYsT2JilPDZ+LAZpO12+W82azdcjbTnfgTcXh/yB0QxKVrxED/0x5z9JvPQ3roRtOjeVfTWzt6OWtm9CxjsGavC3528C8UB4oexagvXo8bz/vztaUYivPHdQ+7VDvIu28ixJSJk63jT5/u8vDxq5n9XU7jgPfEiQpRG2lc9GdqF8RQok22SHnYnPBGV4gj1fGCcz9XH4uD1sjnGeKaI42L/kztghgK27+UJ7FpOFeBOGK/PscvuMfUvtfdOaSR9C92rX9anJrf+Jw4yTyJ9XfFkfp1eR3gm9r3MnFoYfYoCCGNi/5M7YIYCtu/lIdd9/1nxfG2ihkPcL63xXF3Tap5fL7PA8QScUR/7rKXYyj8kIW9BnEwc2hzuY8cu0/pjMv1sBMh49kdjDgUOmzGnza6P0v+luBMDuz5GIzz5fstrm0Zto0kglGf7rLWzehPnx3uK/T+YEfiKED8Nf0FKg6LitMwKo4ioOI0jIrTLC/zA2mjULF+VzyBAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                        </Sequence>
+                      </ActivityAction>
+                    </uix:NForEachUiElement.Body>
+                    <uix:NForEachUiElement.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="8, 149, 360, 587" DesignTimeScaleFactor="1" FriendlyName="'FriendsFriend Requests3…'" FullSelectorArgument="&lt;webctrl aria-label='Friend Requests' aria-role='navigation' tag='DIV' /&gt;" Guid="1a3be177-06d7-4f43-8521-a850dc79053e" InformativeScreenshot="9d6322bfc7f119755042f3403c300e7f.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='Friend Requests | Facebook' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NForEachUiElement.Target>
+                    <uix:NForEachUiElement.Variables>
+                      <Variable x:TypeArguments="ui:UiElement" Name="CurrentElement" />
+                      <Variable x:TypeArguments="x:String" Name="CurrentElement_Label" />
+                    </uix:NForEachUiElement.Variables>
+                    <uix:NForEachUiElement.VariablesMetadata>
+                      <scg:List x:TypeArguments="uuam:VariableMetadata" x:Key="Column0" Capacity="4">
+                        <uuam:VariableMetadata Name="CurrentElement" Type="ui:UiElement" />
+                        <uuam:VariableMetadata Name="CurrentElement_Label" Type="x:String" />
+                      </scg:List>
+                    </uix:NForEachUiElement.VariablesMetadata>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NForEachUiElement>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-8, -8, 1382, 744" BrowserType="Firefox" IconBase64="AAABAAIAEBAAAAEAIABoBAAAJgAAACAgAAABACAAqBAAAI4EAAAoAAAAEAAAACAAAAABACAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP9oCCD/Zgig//Psz////////////2YI3/9nCZD/ZAhAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/2AAEP9lB5D/Zgj//2YI///r4P////////////9mCP//Zgj//2YI//9lCZD/cBAQAAAAAAAAAAAAAAAA/2AAEP9mB8//Zgj//2YI//9mCP//6+D/////////////Zgj//2YI//9mCP//Zgj//2YJz/9wEBAAAAAAAAAAAP9lB5D/Zgj//2YI//9mCP//Zgj//+vg/////////////2YI//9mCP//Zgj//2YI//9mCP//ZQmQAAAAAP9kCED/Zgj//2YI//9mCP//Zgj//2YI///r4P////////////9mCP//Zgj//2YI//9mCP//Zgj//2YI//9oCCD/ZQeQ/2YI//9mCP//Zgj//5ZV//+yg///9e//////////////soP//7KD//95J///Zgj//2YI//9mCP//Zwif/2YI3/9mCP//Zgj//2YI///Fov//////////////////////////////////lVX//2YI//9mCP//Zgj//2YHz/9mCP//Zgj//2YI//9mCP//xaL//////////////////////////////////7KD//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//6+D/////////////Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YHz/9mCP//Zgj//2YI//9mCP//Zgj//+vg/////////////3AY//9mCP//Zgj//2YI//9mCP//Zgj//2YI3/9mCKD/Zgj//2YI//9mCP//Zgj//2YI///Zwf/////////////Psf//n2T//5ZV//9mCP//Zgj//2YI//9lCZD/aAgg/2YI//9mCP//Zgj//2YI//9mCP//n2T////////////////////////Ywf//Zgj//2YI//9mCP//aAhAAAAAAP9mB4//Zgj//2YI//9mCP//Zgj//2YI//+pdP//7OD/////////////z7L//2YI//9mCP//ZgePAAAAAAAAAAD/cBAQ/2YJz/9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//ZgnP/2AQEAAAAAAAAAAAAAAAAP9wEBD/ZgeP/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//ZgeP/2AQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP9oCED/ZwmQ/2YI3/9mCP//Zgj//2YJz/9nCJ//aAggAAAAAAAAAAAAAAAAAAAAAPAPAADAAwAAgAEAAIABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIABAACAAQAAwAMAAPAPAAAoAAAAIAAAAEAAAAABACAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP9wEBD/ZQhg/+/noP///8/////v////////////697v/2YHz/9nCJ//ZQhg/3AQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP9oCCD/Zgig/2YI//9mCP//6+D////////////////////////s4P//Zgj//2YI//9mCP//ZQfv/2cJkP9oCCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP9gABD/ZQeQ/2YI//9mCP//Zgj//2YI///r4P///////////////////////+zg//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9lCZD/cBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/aAgg/2YI3/9mCP//Zgj//2YI//9mCP//Zgj//+vg////////////////////////7OD//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCN//aAggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/2UFMP9mCN//Zgj//2YI//9mCP//Zgj//2YI//9mCP//6+D////////////////////////s4P//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCN//ZQUwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP9oCCD/Zgjf/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI///r4P///////////////////////+zg//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCN//aAggAAAAAAAAAAAAAAAAAAAAAAAAAAD/YAAQ/2YI3/9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//+vg////////////////////////7OD//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCN//cBAQAAAAAAAAAAAAAAAAAAAAAP9lB5D/Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//6+D////////////////////////s4P//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9lCZAAAAAAAAAAAAAAAAD/aAgg/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI///r4P///////////////////////+zg//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9oCCAAAAAAAAAAAP9lB5D/Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//+vg////////////////////////7OD//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2cInwAAAAD/YAAQ/2UH7/9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//6+D////////////////////////s4P//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2AQEP9lCGD/Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//3kn///r4P//6+D//+vg///////////////////////////////////r4P//6+D//+vg///r4P//lVX//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zghf/2YIoP9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//eSf///////////////////////////////////////////////////////////////////////+yg///Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9nCJ//ZgfP/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//95J////////////////////////////////////////////////////////////////////////9jB//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YHz/9lB+//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//3kn////////////////////////////////////////////////////////////////////////7OD//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgfv/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//eSf/////////////////////////////////////////////////////////////////////////////cBj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//6+D////////////////////////s4P//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9lB+//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI///r4P///////////////////////+zg//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgfv/2YHz/9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//+vg/////////////////////////////2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mB8//Zgig/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//49D/////////////////////////////gzf//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2cIn/9lCGD/Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI///Psv/////////////////////////////j0f//cBj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//ZQhg/2AAEP9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//59k///////////////////////////////////17///4tD//9jB///Ywf//jEb//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YH7/9gEBAAAAAA/2YIoP9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//eSf///////////////////////////////////////////////////////+fZP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//ZQmQAAAAAAAAAAD/aAgg/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//s4T//////////////////////////////////////////////////59k//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9oCCAAAAAAAAAAAAAAAAD/ZgeP/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//s4T/////////////////////////////////////////////n2T//2YI//9mCP//Zgj//2YI//9mCP//ZgePAAAAAAAAAAAAAAAAAAAAAP9wEBD/Zgjf/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//jEX//7yT///s4P///////////////////////+PR//+VVf//Zgj//2YI//9mCP//Zgj//2YI3/9gEBAAAAAAAAAAAAAAAAAAAAAAAAAAAP9oCCD/Zgjf/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//cBj//3AY//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCN//aAggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP9lBTD/Zgjf/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgjf/2UFMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP9oCCD/Zgjf/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI3/9oCCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP9wEBD/ZgeP/2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mB48AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/aAgg/2cJkP9lB+//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9mCP//Zgj//2YI//9nCJ//aAggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/3AQEP9lCGD/Zwif/2YJz/9lB+//Zgj//2YI//9lB+//ZgnP/2cIn/9mCF//cBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/AA///AAD//AAAP/gAAB/wAAAP4AAAB8AAAAPAAAADgAAAAYAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAABgAAAAcAAAAPAAAAD4AAAB/AAAA/4AAAf/AAAf/8AAP//wAP/" InformativeScreenshot="869f761d62d227729ff48e5917cfb292.png" Selector="&lt;html app='firefox.exe' title='(5) Facebook' /&gt;" Title="(5) Facebook" Url="https://www.facebook.com/friends/requests" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="656,52" sap2010:WorkflowViewState.IdRef="LogMessage_4">
+            <ui:LogMessage.Level>
+              <InArgument x:TypeArguments="ui:LogLevel">
+                <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_48">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+              </InArgument>
+            </ui:LogMessage.Level>
+            <ui:LogMessage.Message>
+              <InArgument x:TypeArguments="x:Object">
+                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_47">"Log message for the CFR"</CSharpValue>
+              </InArgument>
+            </ui:LogMessage.Message>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:LogMessage>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="376,173" sap2010:WorkflowViewState.IdRef="Sequence_14">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,85" sap2010:WorkflowViewState.IdRef="MessageBox_6">
+            <ui:MessageBox.Text>
+              <InArgument x:TypeArguments="x:Object">
+                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_41">"Input value for the cancel friend request column is 0."</CSharpValue>
+              </InArgument>
+            </ui:MessageBox.Text>
+          </ui:MessageBox>
+        </Sequence>
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>
