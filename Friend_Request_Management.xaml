@@ -5,7 +5,7 @@
     <x:Property Name="in_Skip_FRM" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>944,4636</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>944,5299</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -48,6 +48,7 @@
       <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
       <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
       <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>System.Security</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -109,9 +110,10 @@
       <AssemblyReference>System.Private.Xml</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Friend_Request_Management" sap:VirtualizedContainerService.HintSize="794,4571" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Friend_Request_Management" sap:VirtualizedContainerService.HintSize="870,5234" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="0" Name="AFR" />
       <Variable x:TypeArguments="x:String" Default="0" Name="CFR" />
@@ -127,7 +129,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign sap2010:Annotation.AnnotationText="Assigned the arrgument value to string variables.&#xA;AFR = Accept_Friend_Requests&#xA;CFR = Cancel_Friend_Requests" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="732,109" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign sap2010:Annotation.AnnotationText="Assigned the arrgument value to string variables.&#xA;AFR = Accept_Friend_Requests&#xA;CFR = Cancel_Friend_Requests" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="808,109" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -164,7 +166,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <If sap2010:Annotation.AnnotationText="Checking whether the cancel friend request value is empty or not." sap:VirtualizedContainerService.HintSize="732,109" sap2010:WorkflowViewState.IdRef="If_1">
+    <If sap2010:Annotation.AnnotationText="Checking whether the cancel friend request value is empty or not." sap:VirtualizedContainerService.HintSize="808,109" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Condition>
         <InArgument x:TypeArguments="x:Boolean">
           <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">!string.IsNullOrEmpty(CFR)</CSharpValue>
@@ -220,7 +222,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <If sap2010:Annotation.AnnotationText="Checking whether the accept friend request value is empty or not." sap:VirtualizedContainerService.HintSize="732,109" sap2010:WorkflowViewState.IdRef="If_2">
+    <If sap2010:Annotation.AnnotationText="Checking whether the accept friend request value is empty or not." sap:VirtualizedContainerService.HintSize="808,109" sap2010:WorkflowViewState.IdRef="If_2">
       <If.Condition>
         <InArgument x:TypeArguments="x:Boolean">
           <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">!string.IsNullOrEmpty(AFR)</CSharpValue>
@@ -276,7 +278,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <If sap2010:Annotation.AnnotationText="Run only when the accept friend request value is greater than 0.&#xA;Then the control will move to the block." DisplayName="Check the condition for the AFR" sap:VirtualizedContainerService.HintSize="732,2073" sap2010:WorkflowViewState.IdRef="If_3">
+    <If sap2010:Annotation.AnnotationText="Run only when the accept friend request value is greater than 0.&#xA;Then the control will move to the block." DisplayName="Check the condition for the AFR" sap:VirtualizedContainerService.HintSize="808,2158" sap2010:WorkflowViewState.IdRef="If_3">
       <If.Condition>
         <InArgument x:TypeArguments="x:Boolean">
           <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">Int_AFR &gt; 0</CSharpValue>
@@ -290,26 +292,26 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="698,1849" sap2010:WorkflowViewState.IdRef="Sequence_10">
+        <Sequence sap:VirtualizedContainerService.HintSize="648,1934" sap2010:WorkflowViewState.IdRef="Sequence_10">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <uix:NApplicationCard sap2010:Annotation.AnnotationText="Navigat to the facebook" AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Firefox: (5) Facebook" sap:VirtualizedContainerService.HintSize="656,1580" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="Simulate" OpenMode="IfNotOpen" ScopeGuid="c50b88f1-dfc7-4fe6-9bb4-fa68d0005dbe" Version="V2" WindowResize="Maximize">
+          <uix:NApplicationCard sap2010:Annotation.AnnotationText="Navigat to the facebook" AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Firefox: (5) Facebook" sap:VirtualizedContainerService.HintSize="606,1665" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="Simulate" OpenMode="IfNotOpen" ScopeGuid="c50b88f1-dfc7-4fe6-9bb4-fa68d0005dbe" Version="V2" WindowResize="Maximize">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="622,1332" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="572,1417" sap2010:WorkflowViewState.IdRef="Sequence_18">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="Click on the friends button on the facebook page." ClickType="Single" DisplayName="Click 'Friends'" sap:VirtualizedContainerService.HintSize="560,94" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c50b88f1-dfc7-4fe6-9bb4-fa68d0005dbe" Version="V3">
+                  <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="Click on the friends button on the facebook page." ClickType="Single" DisplayName="Click 'Friends'" sap:VirtualizedContainerService.HintSize="510,188" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c50b88f1-dfc7-4fe6-9bb4-fa68d0005dbe" Version="V3">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://www.facebook.com/" CvTextArea="61, 224, 49, 14" CvTextArgument="Friends" CvType="Text" DesignTimeRectangle="62, 221, 233, 20" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Friends'" FullSelectorArgument="&lt;webctrl aaname='Friends' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Friends' tag='SPAN' type='' class='x1lliihq x6ikm8r x10wlt62 x1n2onr6' check:innerText='Friends' /&gt;" Guid="4587055b-4b9e-47af-a680-4bfe361ac751" InformativeScreenshot="0b14024c0a1f151a225d310f3223ad3a.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='firefox.exe' title='(5) Facebook' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
@@ -321,13 +323,13 @@
                     </uix:NClick.Target>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NClick>
-                  <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="Click on the friend request button on the facebook page." ClickType="Single" DisplayName="Click 'Friend requests'" sap:VirtualizedContainerService.HintSize="560,94" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c50b88f1-dfc7-4fe6-9bb4-fa68d0005dbe" Version="V3">
+                  <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="Click on the friend request button on the facebook page." ClickType="Single" DisplayName="Click 'Friend requests'" sap:VirtualizedContainerService.HintSize="510,199" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c50b88f1-dfc7-4fe6-9bb4-fa68d0005dbe" Version="V3">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://www.facebook.com/friends" CvTextArea="71, 275, 117, 20" CvTextArgument="Friend requests" CvType="Text" DesignTimeRectangle="72, 272, 115, 22" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Friend requests'" FullSelectorArgument="&lt;webctrl parentid=':r77:' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid=':r77:' tag='SPAN' type='' class='x193iq5w xeuugli x13faqbe x1vvkbs x1xmvt09 x1lkfr7t x1lbecb7 xk50ysn xzsf02u' aaname='Friend requests' check:innerText='Friend requests' /&gt;" Guid="1c3326cc-b7ea-43a5-a08e-a861a2e80493" InformativeScreenshot="f7018fa6194a144b2ae2041de2e116bf.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='firefox.exe' title='(9) Friends | Facebook' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
@@ -339,99 +341,151 @@
                     </uix:NClick.Target>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </uix:NClick>
-                  <uix:NForEachUiElement sap2010:Annotation.AnnotationText="Loading the friend requests. So that we can iterate each element indivisually." DelayBefore="5" DisplayName="For Each UI Element" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='CurrentElement'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="560,949" sap2010:WorkflowViewState.IdRef="NForEachUiElement_3" LimitExtractionTo="Rows" MaximumResults="5" ScopeIdentifier="c50b88f1-dfc7-4fe6-9bb4-fa68d0005dbe" Version="V3">
-                    <uix:NForEachUiElement.Body>
-                      <ActivityAction x:TypeArguments="x:Int32">
-                        <ActivityAction.Argument>
-                          <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
-                        </ActivityAction.Argument>
-                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,653" sap2010:WorkflowViewState.IdRef="Sequence_17">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <Assign sap2010:Annotation.AnnotationText="Getting only the name of the friend request." sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="Assign_5">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:String">
-                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_10">CurrentElement_Label</CSharpReference>
-                              </OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:String">
-                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_49">CurrentElement_Label.Split(new[] { '\r', '\n' }, StringSplitOptions.None)[0]</CSharpValue>
-                              </InArgument>
-                            </Assign.Value>
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </Assign>
-                          <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="Click on the request. So, that the profile is opend." ClickType="Single" DisplayName="Click 'Naeem Baba'" sap:VirtualizedContainerService.HintSize="434,188" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c50b88f1-dfc7-4fe6-9bb4-fa68d0005dbe" Version="V3">
-                            <uix:NClick.Target>
-                              <uix:TargetAnchorable BrowserURL="https://www.facebook.com/friends/requests" CvTextArea="95, 273, 88, 14" CvTextArgument="Naeem Baba" CvType="Text" DesignTimeRectangle="96, 270, 87, 20" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Naeem Baba'" Guid="8f70d07b-78ba-4c4c-9cc3-672039804a05" InformativeScreenshot="fcc5140eafa63d3dc2e09b1b1fb64c3c.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='Friend Requests | Facebook' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
-                                <uix:TargetAnchorable.FullSelectorArgument>
-                                  <InArgument x:TypeArguments="x:String">
-                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_50">string.Format("&lt;webctrl aaname='{0}' tag='SPAN' /&gt;", CurrentElement_Label)</CSharpValue>
-                                  </InArgument>
-                                </uix:TargetAnchorable.FullSelectorArgument>
-                                <uix:TargetAnchorable.FuzzySelectorArgument>
-                                  <InArgument x:TypeArguments="x:String">
-                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_51">string.Format("&lt;webctrl aaname='{0}' tag='SPAN' type='' class='x193iq5w xeuugli x13faqbe x1vvkbs x1xmvt09 x6prxxf xvq8zen x1s688f xzsf02u' check:text='{0}' /&gt;", CurrentElement_Label)</CSharpValue>
-                                  </InArgument>
-                                </uix:TargetAnchorable.FuzzySelectorArgument>
-                              </uix:TargetAnchorable>
-                            </uix:NClick.Target>
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </uix:NClick>
-                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Confirm request'" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NClick_16" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c50b88f1-dfc7-4fe6-9bb4-fa68d0005dbe" Version="V3">
-                            <uix:NClick.Target>
-                              <uix:TargetAnchorable BrowserURL="https://www.facebook.com/profile.php?id=100041986718321" CvElementArea="1008, 319, 136, 40" CvTextArea="1020, 332, 112, 17" CvTextArgument="Confirm request" CvType="Button" DesignTimeRectangle="1009, 321, 134, 36" DesignTimeScaleFactor="1" FriendlyName="'Confirm request'" FullSelectorArgument="&lt;webctrl aria-role='none' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='4' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='none' type='' class='x1n2onr6 x1ja2u2z x78zum5 x2lah0s xl56j7k x6s0dn4 xozqiw3 x1q0g3np xi112ho x17zwfj4 x585lrc x1403ito x972fbf xcfux6l x1qhh985 xm0m39n x9f619 xn6708d x1ye3gou xtvsq51 x1r1pt67' tag='DIV' aaname='' check:innerText='Confirm request' /&gt;" Guid="d84fef4b-49f8-40cf-ba40-86f145c5b0ad" InformativeScreenshot="c1165927dd4ca9b5c03360f2da7f68c9.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='firefox.exe' title='(1) Friend Requests | Facebook' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
-                                <uix:TargetAnchorable.Anchors>
-                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                    <uix:Target CvElementArea="1008, 319, 136, 40" CvTextArea="1020, 332, 112, 17" CvTextArgument="Confirm request" CvType="Button" DesignTimeRectangle="1021, 329, 110, 20" ElementType="Text" FriendlyName="'Confirm request'" FullSelectorArgument="&lt;webctrl aaname='Confirm request' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Confirm request' tag='SPAN' type='' class='x1lliihq x6ikm8r x10wlt62 x1n2onr6 xlyipyv xuxw1ft' check:innerText='Confirm request' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHIAAAAYCAYAAAAmsqlBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIsSURBVGhD7ZXNbcMwDIV77FidppdM0nNG6BI5dItes0CncElXT6GeSCtGk6IRSOABiUXx75Psp+fXZUk9vhLkJEqQkyhBTqIEOYkS5CRKkJPIBfnysXR2eu/9fiubR+Mfv+SH6MXxTW2rA7kOU+z4Zp7LkG8OUuKp2bgJcqzD58/cDvS8AQmnBuKdhNt4j5s+s8YgBd5ZPcTROnjqXr20BzfrQH5IjmKs6RrfyHqwTBz1O+kP8TvaOKWGda3Y1oGMYusa98dx8NZaTX6fyn/sX2so9TR7RPZts5mnvLFg9dNjTf7D/wLSedV56m6tcwCQ8CyFRj7ejYxA8gAAC3vtwWiGSfusoth4zlDRb9d/mZvaHpCbecq86vzUn3rFPqiC9AbbyUmg4uYA0ibjZ3tA1qEVdZDKMJvGg4Z5vYnt9Wefeesi7m0IcpSn9OOxGIK86kYGPgyFgai4gD0guegOpDOYa0E266U/z7YGzLGGIEd5EKOYrTHqq/tGNqeEFTQyG0jub7TOsa4FGeYpQlw1+EZ9XUCK1mSOU1UAm4M/LMjRYQ7WeW4eyKbmUR6SjRf11YBEgs5Rhs0non5bnKIeFqQIUOy3U33hx9DQhxqeITZiVB9T82YemUk0X8Sy+1QtyCIkscYJrbkn1BRt9/AA/htIu1aNelnzw8SX4bKP1rU1k2pYl5k0Jn7Y08QWfzxzQab2yQP510qQN1CCnEQJMnUzJchJlCCn0LJ8A5hZQ4MREV9iAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, CV" />
-                                  </scg:List>
-                                </uix:TargetAnchorable.Anchors>
-                              </uix:TargetAnchorable>
-                            </uix:NClick.Target>
-                          </uix:NClick>
-                        </Sequence>
-                      </ActivityAction>
-                    </uix:NForEachUiElement.Body>
-                    <uix:NForEachUiElement.Target>
-                      <uix:TargetAnchorable DesignTimeRectangle="8, 149, 360, 587" DesignTimeScaleFactor="1" FriendlyName="'FriendsFriend requests2…'" FullSelectorArgument="&lt;webctrl aria-label='Friend requests' aria-role='navigation' tag='DIV' /&gt;" Guid="d2ce29aa-b3f6-4cd1-96cf-bcffc4ec1a30" InformativeScreenshot="dff4a21ca59dc732e69867cd801b7196.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='(15) Friend requests | Facebook' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                    </uix:NForEachUiElement.Target>
-                    <uix:NForEachUiElement.Variables>
-                      <Variable x:TypeArguments="ui:UiElement" Name="CurrentElement" />
-                      <Variable x:TypeArguments="x:String" Name="CurrentElement_Label" />
-                    </uix:NForEachUiElement.Variables>
-                    <uix:NForEachUiElement.VariablesMetadata>
-                      <scg:List x:TypeArguments="uuam:VariableMetadata" x:Key="Column0" Capacity="4">
-                        <uuam:VariableMetadata Name="CurrentElement" Type="ui:UiElement" />
-                        <uuam:VariableMetadata Name="CurrentElement_Label" Type="x:String" />
-                      </scg:List>
-                    </uix:NForEachUiElement.VariablesMetadata>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                  </uix:NForEachUiElement>
+                  </uix:NClick>
+                  <Assign sap:VirtualizedContainerService.HintSize="510,82" sap2010:WorkflowViewState.IdRef="Assign_7">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">
+                        <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_12">Counter</CSharpReference>
+                      </OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">1</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="510,713" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+                    <ui:InterruptibleWhile.Body>
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,577" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'https://www.facebook.co…'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="HardwareEvents" ScopeIdentifier="c50b88f1-dfc7-4fe6-9bb4-fa68d0005dbe" Version="V3">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable CvElementArea="235, 55, 879, 34" CvType="InputBox" DesignTimeRectangle="343, 58, 740, 28" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'https://www.facebook.co…'" FullSelectorArgument="&lt;uia automationid='nav-bar' name='Navigation' role='tool bar' /&gt;&lt;uia role='combo box' /&gt;&lt;uia automationid='urlbar-input' name='Search with Google or enter address' role='edit' /&gt;" FuzzySelectorArgument="&lt;uia automationid='nav-bar' name='Navigation' role='tool bar' /&gt;&lt;uia role='combo box' /&gt;&lt;uia automationid='urlbar-input' name='Search with Google or enter address' role='edit' /&gt;" Guid="e0c606db-91a4-480f-b3c7-6268d8adb559" InformativeScreenshot="64cb5edf4934977cf5266793fb893ef4.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='firefox.exe' cls='MozillaWindowClass' title='(11) Friend requests | Facebook — Mozilla Firefox' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                  <uix:Target DesignTimeRectangle="1083, 58, 28, 28" ElementType="Button" FriendlyName="'Bookmark this'" FullSelectorArgument="&lt;uia automationid='nav-bar' name='Navigation' role='tool bar' /&gt;&lt;uia automationid='star-button-box' name='Bookmark this page (Ctrl+D)' role='button' /&gt;" FuzzySelectorArgument="&lt;uia automationid='nav-bar' name='Navigation' role='tool bar' /&gt;&lt;uia automationid='star-button-box' name='Bookmark this page (Ctrl+D)' role='button' check:fulltext='Bookmark this page (Ctrl+D)' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFxSURBVFhH7ZehTgNBEIZ5RTAklAQEGJ4ADAkYDBUIEKgaTA2mBlFVU4GpwdRgaqqalORSKoZ8mwxsLpPu7DV0zYkvmez8e/vP7uwlu7dYfMmuWS4rqapvWa3WUsSAgomiBtiJogagNdAa2MrAYPAWsHJeGhvo9V6kc3QSILY0HhobOD+7kH7/NUBsaTw0MjAcjuRg/1Bms3mAmDFLmyLLwHT6KePxu1xdXkv3/uF3nJgxcmjiOSmSBqjsuHMaqlQ4dxZTDTFjsYY5nl1JGtBqvdXpLumuWJqYpAGajGpyrhta5jDXyse4eoAPsa2e64YGrWdxcDch58k5Pz0+m3kgh8Zz9orbAHCucffXSeUtsgzww9nUC+Ryf0puA3Q3Z6s3YTL5CF0OxJbGQ1YPaHXaaLc3d4G4QdGgjeduwm2AKlmIBeqNRswYOTS6Ix6yeoCFuF78/+s5xsjlVA9ZBv6D1kBroKiB4k+zYo/Tv+f5Wn4AUETZZWthTosAAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NTypeInto.Target>
+                          <uix:NTypeInto.Text>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_60">"https://www.facebook.com/friends/requests" + "[k(enter)]"</CSharpValue>
+                            </InArgument>
+                          </uix:NTypeInto.Text>
+                        </uix:NTypeInto>
+                        <uix:NForEachUiElement sap2010:Annotation.AnnotationText="Loading the friend requests. So that we can iterate each element indivisually." DelayBefore="2" DisplayName="For Each UI Element" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='CurrentElement'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="434,109" sap2010:WorkflowViewState.IdRef="NForEachUiElement_5" LimitExtractionTo="Rows" MaximumResults="1" ScopeIdentifier="c50b88f1-dfc7-4fe6-9bb4-fa68d0005dbe" Version="V3">
+                          <uix:NForEachUiElement.Body>
+                            <ActivityAction x:TypeArguments="x:Int32">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+                              </ActivityAction.Argument>
+                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,653" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Assign sap2010:Annotation.AnnotationText="Getting only the name of the friend request." sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="Assign_8">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">
+                                      <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_13">CurrentElement_Label</CSharpReference>
+                                    </OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">
+                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_55">CurrentElement_Label.Split(new[] { '\r', '\n' }, StringSplitOptions.None)[0]</CSharpValue>
+                                    </InArgument>
+                                  </Assign.Value>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </Assign>
+                                <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="Click on the request. So, that the profile is opend." ClickType="Single" DisplayName="Click 'Naeem Baba'" sap:VirtualizedContainerService.HintSize="434,188" sap2010:WorkflowViewState.IdRef="NClick_18" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c50b88f1-dfc7-4fe6-9bb4-fa68d0005dbe" Version="V3">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://www.facebook.com/friends/requests" CvTextArea="95, 273, 88, 14" CvTextArgument="Naeem Baba" CvType="Text" DesignTimeRectangle="96, 270, 87, 20" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Naeem Baba'" Guid="8f70d07b-78ba-4c4c-9cc3-672039804a05" InformativeScreenshot="fcc5140eafa63d3dc2e09b1b1fb64c3c.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='Friend Requests | Facebook' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                                      <uix:TargetAnchorable.FullSelectorArgument>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_56">string.Format("&lt;webctrl aaname='{0}' tag='SPAN' /&gt;", CurrentElement_Label)</CSharpValue>
+                                        </InArgument>
+                                      </uix:TargetAnchorable.FullSelectorArgument>
+                                      <uix:TargetAnchorable.FuzzySelectorArgument>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_57">string.Format("&lt;webctrl aaname='{0}' tag='SPAN' type='' class='x193iq5w xeuugli x13faqbe x1vvkbs x1xmvt09 x6prxxf xvq8zen x1s688f xzsf02u' check:text='{0}' /&gt;", CurrentElement_Label)</CSharpValue>
+                                        </InArgument>
+                                      </uix:TargetAnchorable.FuzzySelectorArgument>
+                                    </uix:TargetAnchorable>
+                                  </uix:NClick.Target>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </uix:NClick>
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Confirm request'" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NClick_19" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c50b88f1-dfc7-4fe6-9bb4-fa68d0005dbe" Version="V3">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://www.facebook.com/profile.php?id=100041986718321" CvElementArea="1008, 319, 136, 40" CvTextArea="1020, 332, 112, 17" CvTextArgument="Confirm request" CvType="Button" DesignTimeRectangle="1009, 321, 134, 36" DesignTimeScaleFactor="1" FriendlyName="'Confirm request'" FullSelectorArgument="&lt;webctrl aria-role='none' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='4' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='none' type='' class='x1n2onr6 x1ja2u2z x78zum5 x2lah0s xl56j7k x6s0dn4 xozqiw3 x1q0g3np xi112ho x17zwfj4 x585lrc x1403ito x972fbf xcfux6l x1qhh985 xm0m39n x9f619 xn6708d x1ye3gou xtvsq51 x1r1pt67' tag='DIV' aaname='' check:innerText='Confirm request' /&gt;" Guid="d84fef4b-49f8-40cf-ba40-86f145c5b0ad" InformativeScreenshot="c1165927dd4ca9b5c03360f2da7f68c9.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='firefox.exe' title='(1) Friend Requests | Facebook' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                      <uix:TargetAnchorable.Anchors>
+                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                          <uix:Target CvElementArea="1008, 319, 136, 40" CvTextArea="1020, 332, 112, 17" CvTextArgument="Confirm request" CvType="Button" DesignTimeRectangle="1021, 329, 110, 20" ElementType="Text" FriendlyName="'Confirm request'" FullSelectorArgument="&lt;webctrl aaname='Confirm request' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Confirm request' tag='SPAN' type='' class='x1lliihq x6ikm8r x10wlt62 x1n2onr6 xlyipyv xuxw1ft' check:innerText='Confirm request' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHIAAAAYCAYAAAAmsqlBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIsSURBVGhD7ZXNbcMwDIV77FidppdM0nNG6BI5dItes0CncElXT6GeSCtGk6IRSOABiUXx75Psp+fXZUk9vhLkJEqQkyhBTqIEOYkS5CRKkJPIBfnysXR2eu/9fiubR+Mfv+SH6MXxTW2rA7kOU+z4Zp7LkG8OUuKp2bgJcqzD58/cDvS8AQmnBuKdhNt4j5s+s8YgBd5ZPcTROnjqXr20BzfrQH5IjmKs6RrfyHqwTBz1O+kP8TvaOKWGda3Y1oGMYusa98dx8NZaTX6fyn/sX2so9TR7RPZts5mnvLFg9dNjTf7D/wLSedV56m6tcwCQ8CyFRj7ejYxA8gAAC3vtwWiGSfusoth4zlDRb9d/mZvaHpCbecq86vzUn3rFPqiC9AbbyUmg4uYA0ibjZ3tA1qEVdZDKMJvGg4Z5vYnt9Wefeesi7m0IcpSn9OOxGIK86kYGPgyFgai4gD0guegOpDOYa0E266U/z7YGzLGGIEd5EKOYrTHqq/tGNqeEFTQyG0jub7TOsa4FGeYpQlw1+EZ9XUCK1mSOU1UAm4M/LMjRYQ7WeW4eyKbmUR6SjRf11YBEgs5Rhs0non5bnKIeFqQIUOy3U33hx9DQhxqeITZiVB9T82YemUk0X8Sy+1QtyCIkscYJrbkn1BRt9/AA/htIu1aNelnzw8SX4bKP1rU1k2pYl5k0Jn7Y08QWfzxzQab2yQP510qQN1CCnEQJMnUzJchJlCCn0LJ8A5hZQ4MREV9iAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, CV" />
+                                        </scg:List>
+                                      </uix:TargetAnchorable.Anchors>
+                                    </uix:TargetAnchorable>
+                                  </uix:NClick.Target>
+                                </uix:NClick>
+                              </Sequence>
+                            </ActivityAction>
+                          </uix:NForEachUiElement.Body>
+                          <uix:NForEachUiElement.Target>
+                            <uix:TargetAnchorable DesignTimeRectangle="8, 149, 360, 587" DesignTimeScaleFactor="1" FriendlyName="'FriendsFriend requests2…'" FullSelectorArgument="&lt;webctrl aria-label='Friend requests' aria-role='navigation' tag='DIV' /&gt;" Guid="d2ce29aa-b3f6-4cd1-96cf-bcffc4ec1a30" InformativeScreenshot="dff4a21ca59dc732e69867cd801b7196.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='(15) Friend requests | Facebook' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                          </uix:NForEachUiElement.Target>
+                          <uix:NForEachUiElement.Variables>
+                            <Variable x:TypeArguments="ui:UiElement" Name="CurrentElement" />
+                            <Variable x:TypeArguments="x:String" Name="CurrentElement_Label" />
+                          </uix:NForEachUiElement.Variables>
+                          <uix:NForEachUiElement.VariablesMetadata>
+                            <scg:List x:TypeArguments="uuam:VariableMetadata" x:Key="Column0" Capacity="4">
+                              <uuam:VariableMetadata Name="CurrentElement" Type="ui:UiElement" />
+                              <uuam:VariableMetadata Name="CurrentElement_Label" Type="x:String" />
+                            </scg:List>
+                          </uix:NForEachUiElement.VariablesMetadata>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NForEachUiElement>
+                        <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_9">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Int32">
+                              <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_14">Counter</CSharpReference>
+                            </OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Int32">
+                              <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_58">Counter + 1</CSharpValue>
+                            </InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </ui:InterruptibleWhile.Body>
+                    <ui:InterruptibleWhile.Condition>
+                      <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_59">Counter &lt;= Int_AFR</CSharpValue>
+                    </ui:InterruptibleWhile.Condition>
+                  </ui:InterruptibleWhile>
                 </Sequence>
               </ActivityAction>
             </uix:NApplicationCard.Body>
@@ -446,7 +500,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uix:NApplicationCard>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="656,141" sap2010:WorkflowViewState.IdRef="LogMessage_5">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="606,141" sap2010:WorkflowViewState.IdRef="LogMessage_5">
             <ui:LogMessage.Level>
               <InArgument x:TypeArguments="ui:LogLevel">
                 <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_43">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -483,7 +537,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <If sap2010:Annotation.AnnotationText="Run only when the cancel friend request value is greater than 0.&#xA;Then the control will move to the block." DisplayName="Check the condition for the CFR" sap:VirtualizedContainerService.HintSize="732,1900" sap2010:WorkflowViewState.IdRef="If_4">
+    <If sap2010:Annotation.AnnotationText="Run only when the cancel friend request value is greater than 0.&#xA;Then the control will move to the block." DisplayName="Check the condition for the CFR" sap:VirtualizedContainerService.HintSize="808,2478" sap2010:WorkflowViewState.IdRef="If_4">
       <If.Condition>
         <InArgument x:TypeArguments="x:Boolean">
           <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_40">Int_CFR &gt; 0</CSharpValue>
@@ -497,182 +551,164 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="698,1676" sap2010:WorkflowViewState.IdRef="Sequence_13">
+        <Sequence sap:VirtualizedContainerService.HintSize="774,2254" sap2010:WorkflowViewState.IdRef="Sequence_13">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <uix:NApplicationCard sap2010:Annotation.AnnotationText="Navigat to the facebook" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Firefox: (5) Facebook" sap:VirtualizedContainerService.HintSize="656,1496" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="Simulate" OpenMode="Always" ScopeGuid="c50b88f1-dfc7-4fe6-9bb4-fa68d0005dbe" Version="V2" WindowResize="Maximize">
+          <uix:NApplicationCard sap2010:Annotation.AnnotationText="Navigat to the facebook" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Firefox: (5) Facebook" sap:VirtualizedContainerService.HintSize="732,2074" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="Simulate" OpenMode="Always" ScopeGuid="c50b88f1-dfc7-4fe6-9bb4-fa68d0005dbe" Version="V2" WindowResize="Maximize">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="622,1248" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="698,1826" sap2010:WorkflowViewState.IdRef="Sequence_20">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="560,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-                    <ui:CommentOut.Body>
-                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,205" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                  <Assign sap:VirtualizedContainerService.HintSize="636,82" sap2010:WorkflowViewState.IdRef="Assign_10">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">
+                        <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_15">Counter</CSharpReference>
+                      </OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">1</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="636,1593" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
+                    <ui:InterruptibleWhile.Body>
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="602,1457" sap2010:WorkflowViewState.IdRef="Sequence_26">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="Click on the friends button on the facebook page." ClickType="Single" DisplayName="Click 'Friends'" sap:VirtualizedContainerService.HintSize="388,94" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c50b88f1-dfc7-4fe6-9bb4-fa68d0005dbe" Version="V3">
-                          <uix:NClick.Target>
-                            <uix:TargetAnchorable BrowserURL="https://www.facebook.com/" CvTextArea="61, 224, 49, 14" CvTextArgument="Friends" CvType="Text" DesignTimeRectangle="62, 221, 233, 20" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Friends'" FullSelectorArgument="&lt;webctrl aaname='Friends' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Friends' tag='SPAN' type='' class='x1lliihq x6ikm8r x10wlt62 x1n2onr6' check:innerText='Friends' /&gt;" Guid="4587055b-4b9e-47af-a680-4bfe361ac751" InformativeScreenshot="0b14024c0a1f151a225d310f3223ad3a.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='firefox.exe' title='(5) Facebook' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'https://www.facebook.co…'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="560,218" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="HardwareEvents" ScopeIdentifier="c50b88f1-dfc7-4fe6-9bb4-fa68d0005dbe" Version="V3">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable CvElementArea="235, 55, 879, 34" CvType="InputBox" DesignTimeRectangle="343, 58, 740, 28" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'https://www.facebook.co…'" FullSelectorArgument="&lt;uia automationid='nav-bar' name='Navigation' role='tool bar' /&gt;&lt;uia role='combo box' /&gt;&lt;uia automationid='urlbar-input' name='Search with Google or enter address' role='edit' /&gt;" FuzzySelectorArgument="&lt;uia automationid='nav-bar' name='Navigation' role='tool bar' /&gt;&lt;uia role='combo box' /&gt;&lt;uia automationid='urlbar-input' name='Search with Google or enter address' role='edit' /&gt;" Guid="e0c606db-91a4-480f-b3c7-6268d8adb559" InformativeScreenshot="64cb5edf4934977cf5266793fb893ef4.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='firefox.exe' cls='MozillaWindowClass' title='(11) Friend requests | Facebook — Mozilla Firefox' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
                               <uix:TargetAnchorable.Anchors>
                                 <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                  <uix:Target CvTextArea="61, 268, 67, 14" CvTextArgument="Memories" CvType="Text" DesignTimeRectangle="62, 265, 233, 20" ElementType="Text" FriendlyName="'Memories'" FullSelectorArgument="&lt;webctrl aaname='Memories' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Memories' tag='SPAN' type='' class='x1lliihq x6ikm8r x10wlt62 x1n2onr6' check:innerText='Memories' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAO0AAAAYCAYAAAAWEnolAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIISURBVHhe7ZjLjcIwEED3kqZCOYRiQLRCRCdoRSNoJc5ef5LY49ghnMjsvsOTSDweD5Kfx/D1+HkaANAD0gIoA2kBlIG0AMpAWgBlIC2AMpAWQBlC2kvXmKbZmeO3DIpczb6xMd21MPZ5Qv0HcymMAfwVCtI2pj3dRdDI7bQzbbvbrLQA/4GZtF7KYre6m2M7jCMtwMeYS3u6ejn3vQx89AfTtGdzsd02l9Z1YNehA/J6neYcY3zu77NppznzQ0LmtIg1wwGy74fr+jA/rCVvCUu1+e9UGwPYKAVp72GjW0FvtbFEoFmsFyFK6OalQkwSTXOCgLOcQuQ8Zuz6h8IBEaVdrM0fGomo/RlpQQVFacMfTsmG9hs8bHYpbRbnGbtgePbSii4ZuqPo5EMXD3KVclqSGiZps64qpX1Rm8gHoIeKtPJzKqqQVlwvJam0Uq6CTKm0Wacuz5MHw4hY62VtIUd8BtBBVdrYidzmjpLNpV3uVp+VdkUn9d/TybsiFmAD1KUdxegSoSxCWr/hMwEz3pa2llNcZ1dIu6K2SMgn6wTYJgvSWny3ku/kb9owR3YpK0AXJX9bWksxp5BqhbTDc7U2u2acX84HsEWWpfWCyWtjLq0jyBHJxXlXWodfp5JzrbTju2Ke6Vpcyg+wXYS0ALB9kBZAGUgLoAykBVAG0gIoA2kBVPE0v3AAO+gROqWVAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, CV" />
+                                  <uix:Target DesignTimeRectangle="1083, 58, 28, 28" ElementType="Button" FriendlyName="'Bookmark this'" FullSelectorArgument="&lt;uia automationid='nav-bar' name='Navigation' role='tool bar' /&gt;&lt;uia automationid='star-button-box' name='Bookmark this page (Ctrl+D)' role='button' /&gt;" FuzzySelectorArgument="&lt;uia automationid='nav-bar' name='Navigation' role='tool bar' /&gt;&lt;uia automationid='star-button-box' name='Bookmark this page (Ctrl+D)' role='button' check:fulltext='Bookmark this page (Ctrl+D)' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFxSURBVFhH7ZehTgNBEIZ5RTAklAQEGJ4ADAkYDBUIEKgaTA2mBlFVU4GpwdRgaqqalORSKoZ8mwxsLpPu7DV0zYkvmez8e/vP7uwlu7dYfMmuWS4rqapvWa3WUsSAgomiBtiJogagNdAa2MrAYPAWsHJeGhvo9V6kc3QSILY0HhobOD+7kH7/NUBsaTw0MjAcjuRg/1Bms3mAmDFLmyLLwHT6KePxu1xdXkv3/uF3nJgxcmjiOSmSBqjsuHMaqlQ4dxZTDTFjsYY5nl1JGtBqvdXpLumuWJqYpAGajGpyrhta5jDXyse4eoAPsa2e64YGrWdxcDch58k5Pz0+m3kgh8Zz9orbAHCucffXSeUtsgzww9nUC+Ryf0puA3Q3Z6s3YTL5CF0OxJbGQ1YPaHXaaLc3d4G4QdGgjeduwm2AKlmIBeqNRswYOTS6Ix6yeoCFuF78/+s5xsjlVA9ZBv6D1kBroKiB4k+zYo/Tv+f5Wn4AUETZZWthTosAAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector" />
                                 </scg:List>
                               </uix:TargetAnchorable.Anchors>
                             </uix:TargetAnchorable>
-                          </uix:NClick.Target>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </uix:NClick>
-                      </Sequence>
-                    </ui:CommentOut.Body>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </ui:CommentOut>
-                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="560,52" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-                    <ui:CommentOut.Body>
-                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,205" sap2010:WorkflowViewState.IdRef="Sequence_22">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="Click on the friend request button on the facebook page." ClickType="Single" DisplayName="Click 'Friend requests'" sap:VirtualizedContainerService.HintSize="388,94" sap2010:WorkflowViewState.IdRef="NClick_14" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c50b88f1-dfc7-4fe6-9bb4-fa68d0005dbe" Version="V3">
-                          <uix:NClick.Target>
-                            <uix:TargetAnchorable BrowserURL="https://www.facebook.com/friends" CvTextArea="71, 275, 117, 20" CvTextArgument="Friend requests" CvType="Text" DesignTimeRectangle="72, 272, 115, 22" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Friend requests'" FullSelectorArgument="&lt;webctrl parentid=':r77:' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid=':r77:' tag='SPAN' type='' class='x193iq5w xeuugli x13faqbe x1vvkbs x1xmvt09 x1lkfr7t x1lbecb7 xk50ysn xzsf02u' aaname='Friend requests' check:innerText='Friend requests' /&gt;" Guid="1c3326cc-b7ea-43a5-a08e-a861a2e80493" InformativeScreenshot="f7018fa6194a144b2ae2041de2e116bf.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='firefox.exe' title='(9) Friends | Facebook' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
-                              <uix:TargetAnchorable.Anchors>
-                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                  <uix:Target CvTextArea="71, 275, 117, 20" CvTextArgument="Friend requests" CvType="Text" DesignTimeRectangle="72, 266, 248, 36" FriendlyName="'Friend requests'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;a&amp;gt;div&amp;gt;div&amp;gt;div' idx='4' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='x1qjc9v5 x1q0q8m5 x1qhh985 xu3j5b3 xcfux6l x26u7qi xm0m39n x13fuv20 x972fbf x9f619 x78zum5 x1r8uery xdt5ytf x1iyjqo2 xs83m0k x1qughib xat24cr x11i5rnm x1mh8g0r xdj266r x2lwn1j xeuugli x4uap5 xkhd6sd xz9dl7a xsag5q8 x1n2onr6 x1ja2u2z' tag='DIV' aaname='' check:innerText='Friend requests' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPwAAAAoCAYAAADaBJdeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALvSURBVHhe7ZjbkeMgEADvx1ESjmJxJorEiegEjKQBBj18q731TncVH0IMGigasP9MAOAGhAdwBMIDOALhARyB8ACOQHgARyA8gCMQHsARCA/gCIQHcATCAzgC4QEcgfAAjvga4cdhejzC9HzJ8+2M0/B4TOH7PgjwKyiEfz3DLO6jLcMoLTog/L28nlP41vmF34oh/DDr9NNBeIB3QPhPAOHhi7gmfLq6z+/TAozXfVmES31uJbymZ1A/C8JzrlGsMVne3Z8Pqe3WZhhPCL9KsvWvux6HrT97zG3+YzU/ab7qcUlck9s6Z7kcvV++U+aZyzqOTgxAjzeED1MIVZtGeJFMGZYWrpZjlVjFSZ0WM+ekT7dNxDPCh1CfjBKvcmnH3eZv5Xta+GZc9YaVn8vPqXzWzUueEwcxAAan/rRbF5UhZCLVVyIUAkWqBWr2JTJujZpFnZCT7Vh4o036rr0JLG1tkWNonI+rwtdjEvScVfPXYAl/FANg8NYJXztULr7OAq9F6CzY4ibQ+94cVZ6QBiJ865nqX5HqU+Ne/u38nBK+k0euX8aWx2PllbCEP4oBMHjvN7w8rljCx8VolOvCW/mcFb7dLPIp3SlKeKvvfxHe/F6RnwicSjXmzlh2YwAMbhN+V8bI/xTeOL037hDekrVHji82g8M+jBgAgxuEl36OrppnhJfT0b4Ovyd8dwyKIgdFvh2oWLOvejM6uQEW5D7WcZ/aNKoYAINbhF8WX3mSxoV/JEusLmVrJFv6LqQy6Eoip2El9DiotsaGkufGzkW3y/lWuaWxVjLGbywV8/viXWqvczdkPowBaLlJ+Mgm5lJaCdq+rNN1kSiXuKhb0Rp2T8XlCqxKYc+MSK/fm/OTxrG1G8bOiV61K+TceydsG46IfyIGoKYQHvY53BABfjgIfwGEh08H4S+A8PDpIPwFEB4+HYQHcATCAzgC4QEcgfAAjkB4AEcgPIAjEB7AEQgP4AiEB3AEwgO4YZr+Atc7PM+Ak8yCAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, CV" />
-                                </scg:List>
-                              </uix:TargetAnchorable.Anchors>
-                            </uix:TargetAnchorable>
-                          </uix:NClick.Target>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </uix:NClick>
-                      </Sequence>
-                    </ui:CommentOut.Body>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </ui:CommentOut>
-                  <uix:NForEachUiElement sap2010:Annotation.AnnotationText="Loading the friend requests. So that we can iterate each element indivisually." DelayBefore="5" DisplayName="For Each UI Element" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='CurrentElement'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="560,949" sap2010:WorkflowViewState.IdRef="NForEachUiElement_4" LimitExtractionTo="Rows" MaximumResults="5" ScopeIdentifier="c50b88f1-dfc7-4fe6-9bb4-fa68d0005dbe" Version="V3">
-                    <uix:NForEachUiElement.Body>
-                      <ActivityAction x:TypeArguments="x:Int32">
-                        <ActivityAction.Argument>
-                          <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
-                        </ActivityAction.Argument>
-                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,653" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                          </uix:NTypeInto.Target>
+                          <uix:NTypeInto.Text>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_61">"https://www.facebook.com/friends/requests" + "[k(enter)]"</CSharpValue>
+                            </InArgument>
+                          </uix:NTypeInto.Text>
+                        </uix:NTypeInto>
+                        <uix:NForEachUiElement sap2010:Annotation.AnnotationText="Loading the friend requests. So that we can iterate each element indivisually." DelayBefore="5" DisplayName="For Each UI Element" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='CurrentElement'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="560,989" sap2010:WorkflowViewState.IdRef="NForEachUiElement_4" LimitExtractionTo="Rows" MaximumResults="1" ScopeIdentifier="c50b88f1-dfc7-4fe6-9bb4-fa68d0005dbe" Version="V3">
+                          <uix:NForEachUiElement.Body>
+                            <ActivityAction x:TypeArguments="x:Int32">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+                              </ActivityAction.Argument>
+                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,653" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Assign sap2010:Annotation.AnnotationText="Getting only the name of the friend request." sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="Assign_6">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">
+                                      <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_11">CurrentElement_Label</CSharpReference>
+                                    </OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">
+                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_52">CurrentElement_Label.Split(new[] { '\r', '\n' }, StringSplitOptions.None)[0]</CSharpValue>
+                                    </InArgument>
+                                  </Assign.Value>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </Assign>
+                                <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="Click on the request. So, that the profile is opend." ClickType="Single" DisplayName="Click 'Naeem Baba'" sap:VirtualizedContainerService.HintSize="434,188" sap2010:WorkflowViewState.IdRef="NClick_15" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c50b88f1-dfc7-4fe6-9bb4-fa68d0005dbe" Version="V3">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://www.facebook.com/friends/requests" CvTextArea="95, 273, 88, 14" CvTextArgument="Naeem Baba" CvType="Text" DesignTimeRectangle="96, 270, 87, 20" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Naeem Baba'" Guid="8f70d07b-78ba-4c4c-9cc3-672039804a05" InformativeScreenshot="fcc5140eafa63d3dc2e09b1b1fb64c3c.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='Friend Requests | Facebook' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                                      <uix:TargetAnchorable.FullSelectorArgument>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_53">string.Format("&lt;webctrl aaname='{0}' tag='SPAN' /&gt;", CurrentElement_Label)</CSharpValue>
+                                        </InArgument>
+                                      </uix:TargetAnchorable.FullSelectorArgument>
+                                      <uix:TargetAnchorable.FuzzySelectorArgument>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_54">string.Format("&lt;webctrl aaname='{0}' tag='SPAN' type='' class='x193iq5w xeuugli x13faqbe x1vvkbs x1xmvt09 x6prxxf xvq8zen x1s688f xzsf02u' check:text='{0}' /&gt;", CurrentElement_Label)</CSharpValue>
+                                        </InArgument>
+                                      </uix:TargetAnchorable.FuzzySelectorArgument>
+                                    </uix:TargetAnchorable>
+                                  </uix:NClick.Target>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </uix:NClick>
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Delete request'" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NClick_17" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c50b88f1-dfc7-4fe6-9bb4-fa68d0005dbe" Version="V3">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://www.facebook.com/profile.php?id=100041986718321" CvElementArea="1149, 319, 138, 40" CvTextArea="1167, 332, 101, 17" CvTextArgument="Delete request" CvType="Button" DesignTimeRectangle="1151, 321, 134, 36" DesignTimeScaleFactor="1" FriendlyName="'Delete request'" FullSelectorArgument="&lt;webctrl aria-role='none' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='5' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='none' type='' class='x1n2onr6 x1ja2u2z x78zum5 x2lah0s xl56j7k x6s0dn4 xozqiw3 x1q0g3np xi112ho x17zwfj4 x585lrc x1403ito x972fbf xcfux6l x1qhh985 xm0m39n x9f619 xn6708d x1ye3gou x1qhmfi1 x1r1pt67' tag='DIV' aaname='' check:innerText='Delete request' /&gt;" Guid="ffa3690f-1eaf-4ecd-9463-3d0e0dc49802" InformativeScreenshot="ea3024c8fad62f05f00ae8fa68654ae0.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='firefox.exe' title='(1) Friend Requests | Facebook' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                      <uix:TargetAnchorable.Anchors>
+                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                          <uix:Target CvElementArea="1149, 319, 138, 40" CvTextArea="1167, 332, 101, 17" CvTextArgument="Delete request" CvType="Button" DesignTimeRectangle="1168, 329, 99, 20" ElementType="Text" FriendlyName="'Delete request'" FullSelectorArgument="&lt;webctrl aaname='Delete request' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;span' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Delete request' type='' tag='SPAN' class='x1lliihq x6ikm8r x10wlt62 x1n2onr6 xlyipyv xuxw1ft' check:innerText='Delete request' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGcAAAAYCAYAAADnNePtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHzSURBVGhD7ZZLjsMgDIZn0zOlp0mUq6RSTxJFykHaTa9RzaaHYMKAE2wMhnYxSOPFt4jxkz+BfD2/X0ZpExWnYVSchlFxGkbFaRgVp2FUnIZB4szDyZxOMf2Cg2QeZuq22O5qbuy6UgIjzmjmwPa8X01nRara6Hpx2Nr/hNTssjgWEGhYsT2JilPDZ+LAZpO12+W82azdcjbTnfgTcXh/yB0QxKVrxED/0x5z9JvPQ3roRtOjeVfTWzt6OWtm9CxjsGavC3528C8UB4oexagvXo8bz/vztaUYivPHdQ+7VDvIu28ixJSJk63jT5/u8vDxq5n9XU7jgPfEiQpRG2lc9GdqF8RQok22SHnYnPBGV4gj1fGCcz9XH4uD1sjnGeKaI42L/kztghgK27+UJ7FpOFeBOGK/PscvuMfUvtfdOaSR9C92rX9anJrf+Jw4yTyJ9XfFkfp1eR3gm9r3MnFoYfYoCCGNi/5M7YIYCtu/lIdd9/1nxfG2ihkPcL63xXF3Tap5fL7PA8QScUR/7rKXYyj8kIW9BnEwc2hzuY8cu0/pjMv1sBMh49kdjDgUOmzGnza6P0v+luBMDuz5GIzz5fstrm0Zto0kglGf7rLWzehPnx3uK/T+YEfiKED8Nf0FKg6LitMwKo4ioOI0jIrTLC/zA2mjULF+VzyBAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, CV" />
+                                        </scg:List>
+                                      </uix:TargetAnchorable.Anchors>
+                                    </uix:TargetAnchorable>
+                                  </uix:NClick.Target>
+                                </uix:NClick>
+                              </Sequence>
+                            </ActivityAction>
+                          </uix:NForEachUiElement.Body>
+                          <uix:NForEachUiElement.Target>
+                            <uix:TargetAnchorable DesignTimeRectangle="8, 149, 360, 587" DesignTimeScaleFactor="1" FriendlyName="'FriendsFriend requests2…'" FullSelectorArgument="&lt;webctrl aria-label='Friend requests' aria-role='navigation' tag='DIV' /&gt;" Guid="f43ff038-19a5-434a-91d2-fce58266da35" InformativeScreenshot="a6c087aae8e809b853b8913b5a014623.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='Friend requests | Facebook' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                          </uix:NForEachUiElement.Target>
+                          <uix:NForEachUiElement.Variables>
+                            <Variable x:TypeArguments="ui:UiElement" Name="CurrentElement" />
+                            <Variable x:TypeArguments="x:String" Name="CurrentElement_Label" />
+                          </uix:NForEachUiElement.Variables>
+                          <uix:NForEachUiElement.VariablesMetadata>
+                            <scg:List x:TypeArguments="uuam:VariableMetadata" x:Key="Column0" Capacity="4">
+                              <uuam:VariableMetadata Name="CurrentElement" Type="ui:UiElement" />
+                              <uuam:VariableMetadata Name="CurrentElement_Label" Type="x:String" />
+                            </scg:List>
+                          </uix:NForEachUiElement.VariablesMetadata>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Assign sap2010:Annotation.AnnotationText="Getting only the name of the friend request." sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="Assign_6">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:String">
-                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_11">CurrentElement_Label</CSharpReference>
-                              </OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:String">
-                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_52">CurrentElement_Label.Split(new[] { '\r', '\n' }, StringSplitOptions.None)[0]</CSharpValue>
-                              </InArgument>
-                            </Assign.Value>
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </Assign>
-                          <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="Click on the request. So, that the profile is opend." ClickType="Single" DisplayName="Click 'Naeem Baba'" sap:VirtualizedContainerService.HintSize="434,188" sap2010:WorkflowViewState.IdRef="NClick_15" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c50b88f1-dfc7-4fe6-9bb4-fa68d0005dbe" Version="V3">
-                            <uix:NClick.Target>
-                              <uix:TargetAnchorable BrowserURL="https://www.facebook.com/friends/requests" CvTextArea="95, 273, 88, 14" CvTextArgument="Naeem Baba" CvType="Text" DesignTimeRectangle="96, 270, 87, 20" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Naeem Baba'" Guid="8f70d07b-78ba-4c4c-9cc3-672039804a05" InformativeScreenshot="fcc5140eafa63d3dc2e09b1b1fb64c3c.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='Friend Requests | Facebook' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
-                                <uix:TargetAnchorable.FullSelectorArgument>
-                                  <InArgument x:TypeArguments="x:String">
-                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_53">string.Format("&lt;webctrl aaname='{0}' tag='SPAN' /&gt;", CurrentElement_Label)</CSharpValue>
-                                  </InArgument>
-                                </uix:TargetAnchorable.FullSelectorArgument>
-                                <uix:TargetAnchorable.FuzzySelectorArgument>
-                                  <InArgument x:TypeArguments="x:String">
-                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_54">string.Format("&lt;webctrl aaname='{0}' tag='SPAN' type='' class='x193iq5w xeuugli x13faqbe x1vvkbs x1xmvt09 x6prxxf xvq8zen x1s688f xzsf02u' check:text='{0}' /&gt;", CurrentElement_Label)</CSharpValue>
-                                  </InArgument>
-                                </uix:TargetAnchorable.FuzzySelectorArgument>
-                              </uix:TargetAnchorable>
-                            </uix:NClick.Target>
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </uix:NClick>
-                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Delete request'" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NClick_17" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c50b88f1-dfc7-4fe6-9bb4-fa68d0005dbe" Version="V3">
-                            <uix:NClick.Target>
-                              <uix:TargetAnchorable BrowserURL="https://www.facebook.com/profile.php?id=100041986718321" CvElementArea="1149, 319, 138, 40" CvTextArea="1167, 332, 101, 17" CvTextArgument="Delete request" CvType="Button" DesignTimeRectangle="1151, 321, 134, 36" DesignTimeScaleFactor="1" FriendlyName="'Delete request'" FullSelectorArgument="&lt;webctrl aria-role='none' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='5' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='none' type='' class='x1n2onr6 x1ja2u2z x78zum5 x2lah0s xl56j7k x6s0dn4 xozqiw3 x1q0g3np xi112ho x17zwfj4 x585lrc x1403ito x972fbf xcfux6l x1qhh985 xm0m39n x9f619 xn6708d x1ye3gou x1qhmfi1 x1r1pt67' tag='DIV' aaname='' check:innerText='Delete request' /&gt;" Guid="ffa3690f-1eaf-4ecd-9463-3d0e0dc49802" InformativeScreenshot="ea3024c8fad62f05f00ae8fa68654ae0.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='firefox.exe' title='(1) Friend Requests | Facebook' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
-                                <uix:TargetAnchorable.Anchors>
-                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                    <uix:Target CvElementArea="1149, 319, 138, 40" CvTextArea="1167, 332, 101, 17" CvTextArgument="Delete request" CvType="Button" DesignTimeRectangle="1168, 329, 99, 20" ElementType="Text" FriendlyName="'Delete request'" FullSelectorArgument="&lt;webctrl aaname='Delete request' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;span' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Delete request' type='' tag='SPAN' class='x1lliihq x6ikm8r x10wlt62 x1n2onr6 xlyipyv xuxw1ft' check:innerText='Delete request' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGcAAAAYCAYAAADnNePtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHzSURBVGhD7ZZLjsMgDIZn0zOlp0mUq6RSTxJFykHaTa9RzaaHYMKAE2wMhnYxSOPFt4jxkz+BfD2/X0ZpExWnYVSchlFxGkbFaRgVp2FUnIZB4szDyZxOMf2Cg2QeZuq22O5qbuy6UgIjzmjmwPa8X01nRara6Hpx2Nr/hNTssjgWEGhYsT2JilPDZ+LAZpO12+W82azdcjbTnfgTcXh/yB0QxKVrxED/0x5z9JvPQ3roRtOjeVfTWzt6OWtm9CxjsGavC3528C8UB4oexagvXo8bz/vztaUYivPHdQ+7VDvIu28ixJSJk63jT5/u8vDxq5n9XU7jgPfEiQpRG2lc9GdqF8RQok22SHnYnPBGV4gj1fGCcz9XH4uD1sjnGeKaI42L/kztghgK27+UJ7FpOFeBOGK/PscvuMfUvtfdOaSR9C92rX9anJrf+Jw4yTyJ9XfFkfp1eR3gm9r3MnFoYfYoCCGNi/5M7YIYCtu/lIdd9/1nxfG2ihkPcL63xXF3Tap5fL7PA8QScUR/7rKXYyj8kIW9BnEwc2hzuY8cu0/pjMv1sBMh49kdjDgUOmzGnza6P0v+luBMDuz5GIzz5fstrm0Zto0kglGf7rLWzehPnx3uK/T+YEfiKED8Nf0FKg6LitMwKo4ioOI0jIrTLC/zA2mjULF+VzyBAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, CV" />
-                                  </scg:List>
-                                </uix:TargetAnchorable.Anchors>
-                              </uix:TargetAnchorable>
-                            </uix:NClick.Target>
-                          </uix:NClick>
-                        </Sequence>
-                      </ActivityAction>
-                    </uix:NForEachUiElement.Body>
-                    <uix:NForEachUiElement.Target>
-                      <uix:TargetAnchorable DesignTimeRectangle="8, 149, 360, 587" DesignTimeScaleFactor="1" FriendlyName="'FriendsFriend requests2…'" FullSelectorArgument="&lt;webctrl aria-label='Friend requests' aria-role='navigation' tag='DIV' /&gt;" Guid="f43ff038-19a5-434a-91d2-fce58266da35" InformativeScreenshot="a6c087aae8e809b853b8913b5a014623.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='Friend requests | Facebook' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
-                    </uix:NForEachUiElement.Target>
-                    <uix:NForEachUiElement.Variables>
-                      <Variable x:TypeArguments="ui:UiElement" Name="CurrentElement" />
-                      <Variable x:TypeArguments="x:String" Name="CurrentElement_Label" />
-                    </uix:NForEachUiElement.Variables>
-                    <uix:NForEachUiElement.VariablesMetadata>
-                      <scg:List x:TypeArguments="uuam:VariableMetadata" x:Key="Column0" Capacity="4">
-                        <uuam:VariableMetadata Name="CurrentElement" Type="ui:UiElement" />
-                        <uuam:VariableMetadata Name="CurrentElement_Label" Type="x:String" />
-                      </scg:List>
-                    </uix:NForEachUiElement.VariablesMetadata>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </uix:NForEachUiElement>
+                        </uix:NForEachUiElement>
+                        <Assign sap:VirtualizedContainerService.HintSize="560,82" sap2010:WorkflowViewState.IdRef="Assign_11">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Int32">
+                              <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_16">Counter</CSharpReference>
+                            </OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Int32">
+                              <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_63">Counter + 1</CSharpValue>
+                            </InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </ui:InterruptibleWhile.Body>
+                    <ui:InterruptibleWhile.Condition>
+                      <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_62">Counter &lt;= Int_CFR</CSharpValue>
+                    </ui:InterruptibleWhile.Condition>
+                  </ui:InterruptibleWhile>
                 </Sequence>
               </ActivityAction>
             </uix:NApplicationCard.Body>
@@ -687,7 +723,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uix:NApplicationCard>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="656,52" sap2010:WorkflowViewState.IdRef="LogMessage_4">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="732,52" sap2010:WorkflowViewState.IdRef="LogMessage_4">
             <ui:LogMessage.Level>
               <InArgument x:TypeArguments="ui:LogLevel">
                 <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_48">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
